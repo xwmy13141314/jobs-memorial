@@ -15,7 +15,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Page Header */}
-      <section className="pt-24 pb-12 bg-gradient-to-br from-indigo-900 to-purple-900">
+      <section className="min-h-[32vh] flex items-center justify-center bg-gradient-to-br from-indigo-900 to-purple-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             关于本站

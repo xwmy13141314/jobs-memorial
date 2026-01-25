@@ -64,7 +64,7 @@ export default function TimelineClient() {
   return (
     <>
       {/* Page Header */}
-      <section className="pt-24 pb-12 bg-gradient-to-br from-gray-900 to-gray-800">
+      <section className="min-h-[32vh] flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             生平时间线

@@ -59,7 +59,7 @@ export default function ResourcesClient() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Page Header */}
-      <section className="pt-24 pb-12 bg-gradient-to-br from-green-900 to-teal-900">
+      <section className="min-h-[32vh] flex items-center justify-center bg-gradient-to-br from-green-900 to-teal-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             推荐资源

@@ -77,7 +77,7 @@ export default function ProductsClient() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Page Header */}
-      <section className="pt-24 pb-12 bg-gradient-to-br from-blue-900 to-purple-900">
+      <section className="min-h-[32vh] flex items-center justify-center bg-gradient-to-br from-blue-900 to-purple-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             伟大产品
