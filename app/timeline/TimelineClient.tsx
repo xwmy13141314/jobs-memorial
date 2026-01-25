@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
 import timelineData from '@/data/timeline.json';
 
@@ -48,6 +48,7 @@ export default function TimelineClient() {
   const [expandedId, setExpandedId] = useState<string | null>('birth');
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const events = timelineData.events as Event[];
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const toggleExpand = (id: string) => {
     setExpandedId(expandedId === id ? null : id);
@@ -59,6 +60,18 @@ export default function TimelineClient() {
 
   const closeModal = () => {
     setSelectedEvent(null);
+  };
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -340, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 340, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -75,11 +88,32 @@ export default function TimelineClient() {
         </div>
       </section>
 
-      {/* Desktop Timeline - Horizontal */}
-      <section className="hidden md:block py-12 bg-gray-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex gap-6 overflow-x-auto pb-4 snap-x">
-            {events.map((event, index) => (
+      {/* Desktop Timeline - Horizontal Scroll with Arrow Buttons */}
+      <section className="hidden md:block py-12 bg-gray-50">
+        <div className="mx-auto px-4 relative" style={{ maxWidth: '1040px' }}>
+          {/* Left Arrow Button */}
+          <button
+            onClick={scrollLeft}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3/4 z-20 w-14 h-14 bg-white/95 hover:bg-white shadow-xl hover:shadow-2xl rounded-full flex items-center justify-center transition-all duration-300 group"
+            aria-label="向左滚动"
+          >
+            <svg
+              className="w-9 h-9 text-gray-700 group-hover:text-blue-600 group-hover:scale-110 transition-all duration-300"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={3}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Scroll Container */}
+          <div
+            ref={scrollContainerRef}
+            className="flex gap-6 overflow-x-auto py-4 snap-x scroll-smooth scrollbar-hide"
+          >
+            {events.map((event) => (
               <div
                 key={event.id}
                 className="flex-shrink-0 w-80 snap-start"
@@ -150,6 +184,23 @@ export default function TimelineClient() {
               </div>
             ))}
           </div>
+
+          {/* Right Arrow Button */}
+          <button
+            onClick={scrollRight}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3/4 z-20 w-14 h-14 bg-white/95 hover:bg-white shadow-xl hover:shadow-2xl rounded-full flex items-center justify-center transition-all duration-300 group"
+            aria-label="向右滚动"
+          >
+            <svg
+              className="w-9 h-9 text-gray-700 group-hover:text-blue-600 group-hover:scale-110 transition-all duration-300"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={3}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
       </section>
 

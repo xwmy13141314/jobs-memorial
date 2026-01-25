@@ -39,6 +39,55 @@ function getImageSize(productId: string): { width: number; height: number } {
   return imageSizes[productId] || { width: 800, height: 600 };
 }
 
+// 产品链接配置
+const productLinks: Record<string, { wiki: string; official: string }> = {
+  'apple-ii': {
+    wiki: 'https://zh.wikipedia.org/wiki/Apple_II',
+    official: 'https://www.apple.com/'
+  },
+  'macintosh': {
+    wiki: 'https://zh.wikipedia.org/wiki/Macintosh',
+    official: 'https://www.apple.com/mac/'
+  },
+  'imac': {
+    wiki: 'https://zh.wikipedia.org/wiki/IMac',
+    official: 'https://www.apple.com/imac'
+  },
+  'ipod': {
+    wiki: 'https://zh.wikipedia.org/wiki/IPod',
+    official: 'https://www.apple.com/ipod'
+  },
+  'iphone': {
+    wiki: 'https://zh.wikipedia.org/wiki/IPhone',
+    official: 'https://www.apple.com/iphone'
+  },
+  'ipad': {
+    wiki: 'https://zh.wikipedia.org/wiki/IPad',
+    official: 'https://www.apple.com/ipad'
+  },
+  'macbook-air': {
+    wiki: 'https://zh.wikipedia.org/wiki/MacBook_Air',
+    official: 'https://www.apple.com/macbook-air'
+  },
+  'airpods': {
+    wiki: 'https://zh.wikipedia.org/wiki/AirPods',
+    official: 'https://www.apple.com/airpods'
+  },
+  'apple-watch': {
+    wiki: 'https://zh.wikipedia.org/wiki/Apple_Watch',
+    official: 'https://www.apple.com/watch'
+  },
+  'homepod': {
+    wiki: 'https://zh.wikipedia.org/wiki/HomePod',
+    official: 'https://www.apple.com/homepod'
+  }
+};
+
+// 获取产品链接
+function getProductLinks(productId: string) {
+  return productLinks[productId] || { wiki: '#', official: 'https://www.apple.com' };
+}
+
 const categories = ['全部', '电脑', '手机', '音乐', '平板', '配件'];
 
 export default function ProductsClient() {
@@ -116,7 +165,28 @@ export default function ProductsClient() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {currentProduct && (
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto relative">
+              {/* Left Arrow Button */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToSlide((currentIndex - 1 + filteredProducts.length) % filteredProducts.length);
+                }}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full z-20 w-14 h-14 bg-white/95 hover:bg-white shadow-xl hover:shadow-2xl rounded-full flex items-center justify-center transition-all duration-300 group"
+                aria-label="上一个产品"
+                style={{ marginTop: '-8rem' }}
+              >
+                <svg
+                  className="w-9 h-9 text-gray-700 group-hover:text-blue-600 group-hover:scale-110 transition-all duration-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={3}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+
               {/* Main Product Card */}
               <div
                 className="bg-white rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02] cursor-pointer"
@@ -175,39 +245,34 @@ export default function ProductsClient() {
                 </div>
               </div>
 
-              {/* Carousel Controls */}
-              <div className="flex items-center justify-center gap-4 mt-8">
-                <button
-                  onClick={() => goToSlide((currentIndex - 1 + filteredProducts.length) % filteredProducts.length)}
-                  className="p-3 bg-white rounded-full shadow-lg hover:bg-gray-50 transition-colors"
+              {/* Right Arrow Button */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToSlide((currentIndex + 1) % filteredProducts.length);
+                }}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full z-20 w-14 h-14 bg-white/95 hover:bg-white shadow-xl hover:shadow-2xl rounded-full flex items-center justify-center transition-all duration-300 group"
+                aria-label="下一个产品"
+                style={{ marginTop: '-8rem' }}
+              >
+                <svg
+                  className="w-9 h-9 text-gray-700 group-hover:text-blue-600 group-hover:scale-110 transition-all duration-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={3}
                 >
-                  <svg className="w-6 h-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
 
-                <div className="flex gap-2">
-                  {filteredProducts.slice(0, 5).map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => goToSlide(index)}
-                      className={`w-3 h-3 rounded-full transition-all ${
-                        index === currentIndex
-                          ? 'bg-blue-600 w-8'
-                          : 'bg-gray-300 hover:bg-gray-400'
-                      }`}
-                    />
-                  ))}
+              {/* Product Counter */}
+              <div className="text-center mt-8">
+                <div className="inline-flex items-center gap-3 px-6 py-2 bg-white rounded-full shadow-md">
+                  <span className="text-sm text-gray-600">
+                    {currentIndex + 1} / {filteredProducts.length}
+                  </span>
                 </div>
-
-                <button
-                  onClick={() => goToSlide((currentIndex + 1) % filteredProducts.length)}
-                  className="p-3 bg-white rounded-full shadow-lg hover:bg-gray-50 transition-colors"
-                >
-                  <svg className="w-6 h-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
               </div>
             </div>
           )}
@@ -282,12 +347,22 @@ export default function ProductsClient() {
 
               {/* Links */}
               <div className="flex gap-3">
-                <button className="flex-1 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors">
+                <a
+                  href={getProductLinks(selectedProduct.id).wiki}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors text-center"
+                >
                   了解更多
-                </button>
-                <button className="flex-1 py-3 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-colors">
+                </a>
+                <a
+                  href={getProductLinks(selectedProduct.id).official}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 py-3 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-colors text-center"
+                >
                   官方网站
-                </button>
+                </a>
               </div>
             </div>
           </div>
