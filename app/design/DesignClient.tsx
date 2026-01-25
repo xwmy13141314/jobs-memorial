@@ -103,13 +103,13 @@ function parseMarkdown(content: string) {
     const colonIndex = line.indexOf(':');
     if (colonIndex > 0) {
       const key = line.slice(0, colonIndex).trim();
-      let value = line.slice(colonIndex + 1).trim();
+      let value: string | string[] = line.slice(colonIndex + 1).trim();
       // Remove quotes if present
       if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
         value = value.slice(1, -1);
       }
       // Parse arrays
-      if (value.startsWith('[') && value.endsWith(']')) {
+      if (typeof value === 'string' && value.startsWith('[') && value.endsWith(']')) {
         value = value.slice(1, -1).split(',').map((v: string) => v.trim().replace(/['"]/g, ''));
       }
       frontmatter[key] = value;
