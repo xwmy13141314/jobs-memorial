@@ -1,0 +1,248 @@
+{
+  "events": [
+    {
+      "id": "birth",
+      "year": "1955",
+      "title": "出生",
+      "description": "史蒂夫·乔布斯于1955年2月24日出生在加利福尼亚州旧金山，后被保罗和克拉拉·乔布斯收养。",
+      "image": "/images/timeline/1955-birth.jpg",
+      "isKeyEvent": true,
+      "tags": [
+        "早期"
+      ],
+      "detailedDescription": "史蒂夫·乔布斯于1955年2月24日出生在加利福尼亚州旧金山，后被保罗和克拉拉·乔布斯收养。\n\n在加利福尼亚州山景城的\"柳树谷\"长大，这个地区后来被称为\"硅谷\"的核心。父亲保罗·乔布斯是一名机械师，教会了他如何拆解和组装电子产品，培养了他对技术的浓厚兴趣。"
+    },
+    {
+      "id": "apple-founded",
+      "year": "1976",
+      "title": "创办 Apple",
+      "description": "乔布斯与斯蒂夫·沃兹尼亚克共同创立了苹果电脑公司，开始了改变世界的旅程。",
+      "image": "/images/timeline/1976-apple-founded.jpg",
+      "isKeyEvent": true,
+      "tags": [
+        "创业",
+        "Apple"
+      ],
+      "detailedDescription": "乔布斯与斯蒂夫·沃兹尼亚克共同创立了苹果电脑公司，开始了改变世界的旅程。\n\n苹果公司成立于乔布斯父母的车库里，这是一个典型的硅谷创业故事。Apple I 电脑是沃兹尼亚克的手工杰作，每块主板售价666.66美元。"
+    },
+    {
+      "id": "apple-ii",
+      "year": "1977",
+      "title": "Apple II 发布",
+      "description": "Apple II 成为第一款获得巨大成功的个人电脑，奠定了 Apple 的基础。",
+      "image": "/images/timeline/1977-apple-ii.jpg",
+      "isKeyEvent": false,
+      "tags": [
+        "产品",
+        "成功"
+      ],
+      "detailedDescription": "Apple II 成为第一款获得巨大成功的个人电脑，奠定了 Apple 的基础。\n\nApple II 开箱即用，拥有彩色图形显示能力、内置的 BASIC 编程语言、可扩展的架构和优雅的塑料外壳。到1980年销售额超过1亿美元。"
+    },
+    {
+      "id": "ipo",
+      "year": "1980",
+      "title": "Apple 上市",
+      "description": "Apple 公司上市，成为自1956年福特汽车以来上市IPO规模最大的公司。",
+      "image": "/images/timeline/1980-ipo.png",
+      "isKeyEvent": true,
+      "tags": [
+        "里程碑"
+      ],
+      "detailedDescription": "Apple 公司上市，成为自1956年福特汽车以来上市IPO规模最大的公司。\n\n25岁的乔布斯持有的股票价值超过2亿美元，成为当时最年轻的亿万富翁之一。这次上市不仅让乔布斯和沃兹尼亚克获得了巨额财富。"
+    },
+    {
+      "id": "mac-launch",
+      "year": "1984",
+      "title": "Macintosh 发布",
+      "description": "革命性的 Macintosh 发布，成为第一款面向大众市场的图形界面个人电脑。",
+      "image": "/images/timeline/1984-mac.jpg",
+      "isKeyEvent": true,
+      "tags": [
+        "产品",
+        "创新"
+      ],
+      "detailedDescription": "革命性的 Macintosh 发布，成为第一款面向大众市场的图形界面个人电脑。\n\n著名的\"1984\"广告，以乔治·奥威尔的小说为灵感，将IBM描绘成\"老大哥\"，Macintosh则是打破桎梏的自由斗士，成为了广告史上的经典之作。"
+    },
+    {
+      "id": "leave-apple",
+      "year": "1985",
+      "title": "离开 Apple",
+      "description": "乔布斯因管理层斗争离开 Apple，随后创立了 NeXT 公司。",
+      "image": "/images/timeline/1985-leave.jpg",
+      "isKeyEvent": true,
+      "tags": [
+        "转折点"
+      ],
+      "detailedDescription": "乔布斯因管理层斗争离开 Apple，随后创立了 NeXT 公司。\n\n1985年是乔布斯人生的至暗时刻。心灰意冷的乔布斯选择了辞职，他卖掉了手中大部分Apple股票。这次离开对乔布斯造成了巨大的心理创伤。"
+    },
+    {
+      "id": "next",
+      "year": "1986",
+      "title": "创立 NeXT",
+      "description": "乔布斯创立 NeXT 公司，开发先进的操作系统和工作站。",
+      "image": "/images/timeline/1986-next.jpg",
+      "isKeyEvent": false,
+      "tags": [
+        "创业"
+      ],
+      "detailedDescription": "乔布斯创立 NeXT 公司，开发先进的操作系统和工作站。\n\nNeXTSTEP 操作系统被认为是当时最先进的操作系统之一，影响了后来的 macOS 和 iOS。1996年 Apple 收购 NeXT 时获得了这项技术。"
+    },
+    {
+      "id": "pixar",
+      "year": "1986",
+      "title": "收购 Pixar",
+      "description": "乔布斯收购了 Pixar 动画工作室，开启了动画电影的新时代。",
+      "image": "/images/timeline/1986-pixar.jpg",
+      "isKeyEvent": false,
+      "tags": [
+        "娱乐",
+        "Pixar"
+      ],
+      "detailedDescription": "乔布斯收购了 Pixar 动画工作室，开启了动画电影的新时代。\n\n1995年《玩具总动员》上映，全球票房超过3.6亿美元。Pixar 一夜之间成为动画电影的新霸主，1996年上市后市值达到10亿美元。"
+    },
+    {
+      "id": "toy-story",
+      "year": "1995",
+      "title": "《玩具总动员》上映",
+      "description": "Pixar 制作的第一部全电脑动画电影《玩具总动员》大获成功。",
+      "image": "/images/timeline/1995-toy-story.jpg",
+      "isKeyEvent": false,
+      "tags": [
+        "Pixar",
+        "电影"
+      ],
+      "detailedDescription": "Pixar 制作的第一部全电脑动画电影《玩具总动员》大获成功。\n\n制作耗时四年，成本约3000万美元。这部电影证明了电脑动画可以取代传统手绘动画，成为主流。"
+    },
+    {
+      "id": "apple-acquisition",
+      "year": "1997",
+      "title": "回归 Apple",
+      "description": "Apple 收购 NeXT，乔布斯重返 Apple 担任临时 CEO。",
+      "image": "/images/timeline/1997-return.png",
+      "isKeyEvent": true,
+      "tags": [
+        "转折点",
+        "回归"
+      ],
+      "detailedDescription": "Apple 收购 NeXT，乔布斯重返 Apple 担任临时 CEO。\n\n乔布斯迅速掌控了局面，清洗了董事会，成为临时CEO。他推出了\"Think Different\"广告战役，精简产品线，砍掉了70%的项目。"
+    },
+    {
+      "id": "imac",
+      "year": "1998",
+      "title": "iMac 发布",
+      "description": "设计革命性的 iMac 发布，标志着 Apple 设计复兴的开始。",
+      "image": "/images/timeline/1998-imac.png",
+      "isKeyEvent": false,
+      "tags": [
+        "产品",
+        "设计"
+      ],
+      "detailedDescription": "设计革命性的 iMac 发布，标志着 Apple 设计复兴的开始。\n\niMac G3 最初只有一种颜色——邦迪蓝，后来推出了草莓红、酸橙绿、葡萄紫、橘子橙等多种颜色。两年内销售超过200万台。"
+    },
+    {
+      "id": "ipod",
+      "year": "2001",
+      "title": "iPod 发布",
+      "description": "iPod 发布，改变了人们听音乐的方式。",
+      "image": "/images/timeline/2001-ipod.jpg",
+      "isKeyEvent": true,
+      "tags": [
+        "产品",
+        "音乐"
+      ],
+      "detailedDescription": "iPod 发布，改变了人们听音乐的方式。\n\n第一代 iPod 拥有5GB硬盘存储，可存储约1000首歌曲。到2007年销量超过1亿台，占据了数字音乐播放器市场70%以上的份额。"
+    },
+    {
+      "id": "itunes",
+      "year": "2003",
+      "title": "iTunes Store 上线",
+      "description": "iTunes Store 上线，彻底改变了音乐产业。",
+      "image": "/images/timeline/2003-itunes.jpg",
+      "isKeyEvent": false,
+      "tags": [
+        "服务",
+        "音乐"
+      ],
+      "detailedDescription": "iTunes Store 上线，彻底改变了音乐产业。\n\niTunes Store 上线第一周就售出了100万首歌曲，第一年售出了7000万首。到2010年成为全球最大的音乐零售商。"
+    },
+    {
+      "id": "iphone",
+      "year": "2007",
+      "title": "iPhone 发布",
+      "description": "革命性的 iPhone 发布，重新定义了智能手机。",
+      "image": "/images/timeline/2007-iphone.jpg",
+      "isKeyEvent": true,
+      "tags": [
+        "产品",
+        "手机",
+        "革命性"
+      ],
+      "detailedDescription": "革命性的 iPhone 发布，重新定义了智能手机。\n\n发售时，成千上万的粉丝在 Apple Store 门外排队购买。iPhone 不仅终结了诺基亚和黑莓的统治时代，也开启了移动互联网的新纪元。"
+    },
+    {
+      "id": "app-store",
+      "year": "2008",
+      "title": "App Store 上线",
+      "description": "App Store 上线，创造了移动应用生态。",
+      "image": "/images/timeline/2008-app-store.jpg",
+      "isKeyEvent": false,
+      "tags": [
+        "服务",
+        "生态"
+      ],
+      "detailedDescription": "App Store 上线，创造了移动应用生态。\n\n应用数量呈爆炸式增长：从2008年7月的500个应用，到2009年的10万个，到2011年的50万个。催生了无数创业公司。"
+    },
+    {
+      "id": "ipad",
+      "year": "2010",
+      "title": "iPad 发布",
+      "description": "iPad 发布，开创了平板电脑品类。",
+      "image": "/images/timeline/2010-ipad.jpg",
+      "isKeyEvent": true,
+      "tags": [
+        "产品",
+        "平板"
+      ],
+      "detailedDescription": "iPad 发布，开创了平板电脑品类。\n\n到2011年，iPad 销量超过1500万台，占据了平板电脑市场80%以上的份额。iPad 的成功催生了整个平板电脑行业。"
+    },
+    {
+      "id": "icloud",
+      "year": "2011",
+      "title": "iCloud 发布",
+      "description": "iCloud 云服务发布，实现了设备间的无缝同步。",
+      "image": "/images/timeline/2011-icloud.jpg",
+      "isKeyEvent": false,
+      "tags": [
+        "服务",
+        "云"
+      ],
+      "detailedDescription": "iCloud 云服务发布，实现了设备间的无缝同步。\n\niCloud 是免费的（前5GB存储），这与 MobileMe 每年99美元的收费形成鲜明对比。今天拥有超过10亿用户。"
+    },
+    {
+      "id": "resign",
+      "year": "2011",
+      "title": "辞去 CEO",
+      "description": "因健康原因，乔布斯辞去 Apple CEO 职位，蒂姆·库克接任。",
+      "image": "/images/timeline/2011-resign.jpg",
+      "isKeyEvent": false,
+      "tags": [
+        "个人",
+        "健康"
+      ],
+      "detailedDescription": "因健康原因，乔布斯辞去 Apple CEO 职位，蒂姆·库克接任。\n\n这次权力交接被认为是企业历史上最成功的继任计划之一。蒂姆·库克自1998年加入 Apple，一直负责运营工作。"
+    },
+    {
+      "id": "passing",
+      "year": "2011",
+      "title": "逝世",
+      "description": "2011年10月5日，史蒂夫·乔布斯因胰腺癌并发症逝世，享年56岁。",
+      "image": "/images/timeline/2011-passing.jpg",
+      "isKeyEvent": true,
+      "tags": [
+        "个人",
+        "逝世"
+      ],
+      "detailedDescription": "2011年10月5日，史蒂夫·乔布斯因胰腺癌并发症逝世，享年56岁。\n\n美国总统奥巴马发表声明说：\"乔布斯改变了我们每个人看世界的方式。\"世界各地的人们自发前往 Apple Store 献花悼念。"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="grad18" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e0c3fc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8ec5fc;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#grad18)"/>
+  <text x="40" y="80" font-family="Georgia, serif" font-size="120" fill="rgba(255,255,255,0.3)">"</text>
+  <text x="300" y="150" font-family="Georgia, serif" font-size="17" fill="#333" text-anchor="middle" font-weight="bold">Remembering that you are going to die</text>
+  <text x="300" y="180" font-family="Georgia, serif" font-size="17" fill="#333" text-anchor="middle" font-weight="bold">is the best way I know</text>
+  <text x="300" y="210" font-family="Georgia, serif" font-size="17" fill="#333" text-anchor="middle" font-weight="bold">to avoid the trap of thinking</text>
+  <text x="300" y="240" font-family="Georgia, serif" font-size="17" fill="#333" text-anchor="middle" font-weight="bold">you have something to lose.</text>
+  <text x="300" y="300" font-family="Arial, sans-serif" font-size="12" fill="#555" text-anchor="middle">记住你即将死去，是我知道的避免陷入患得患失的最好方法</text>
+  <text x="300" y="350" font-family="Arial, sans-serif" font-size="12" fill="#777" text-anchor="middle">—— 斯坦福大学演讲 (2005)</text>
+</svg>

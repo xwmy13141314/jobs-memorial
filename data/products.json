@@ -1,0 +1,156 @@
+{
+  "products": [
+    {
+      "id": "apple-ii",
+      "name": "Apple II",
+      "year": 1977,
+      "category": "电脑",
+      "description": "Apple II 是第一款获得巨大商业成功的个人电脑，它定义了个人电脑的标准。",
+      "images": [
+        "/images/products/Apple_II.jpg"
+      ],
+      "significance": "奠定了 Apple 的基础，开启了个人电脑时代",
+      "tags": [
+        "个人电脑",
+        "革命性"
+      ]
+    },
+    {
+      "id": "macintosh",
+      "name": "Macintosh",
+      "year": 1984,
+      "category": "电脑",
+      "description": "第一款面向大众市场的图形界面个人电脑，'1984'超级广告成为经典。",
+      "images": [
+        "/images/products/Macintosh_classic.jpg"
+      ],
+      "significance": "革命性的图形界面，改变了人机交互方式",
+      "tags": [
+        "个人电脑",
+        "图形界面",
+        "创新"
+      ]
+    },
+    {
+      "id": "imac",
+      "name": "iMac G3",
+      "year": 1998,
+      "category": "电脑",
+      "description": "半透明彩色外壳设计震撼了整个电脑行业，标志着 Apple 设计复兴的开始。",
+      "images": [
+        "/images/products/IMac_G3_.png"
+      ],
+      "significance": "Apple 设计复兴的开端，重新定义了电脑外观",
+      "tags": [
+        "设计",
+        "个人电脑"
+      ]
+    },
+    {
+      "id": "ipod",
+      "name": "iPod",
+      "year": 2001,
+      "category": "音乐",
+      "description": "1000首歌装进口袋，iPod 彻底改变了人们听音乐的方式。",
+      "images": [
+        "/images/products/Apple-iPod-.jpg"
+      ],
+      "significance": "改变了音乐产业，奠定了 Apple 在数字音乐领域的地位",
+      "tags": [
+        "音乐",
+        "革命性"
+      ]
+    },
+    {
+      "id": "iphone",
+      "name": "iPhone",
+      "year": 2007,
+      "category": "手机",
+      "description": "重新发明了手机，多点触控屏幕和直观的用户界面改变了智能手机行业。",
+      "images": [
+        "/images/products/iPhone_17_Pro_Max_1.jpg"
+      ],
+      "significance": "改变世界的产品，开启了移动互联网时代",
+      "tags": [
+        "手机",
+        "革命性",
+        "触控"
+      ]
+    },
+    {
+      "id": "ipad",
+      "name": "iPad",
+      "year": 2010,
+      "category": "平板",
+      "description": "创造了介于手机和电脑之间的全新设备品类。",
+      "images": [
+        "/images/products/ipad-mini-finish-.jpg"
+      ],
+      "significance": "开创了平板电脑品类，改变了移动计算方式",
+      "tags": [
+        "平板",
+        "创新"
+      ]
+    },
+    {
+      "id": "macbook-air",
+      "name": "MacBook Air",
+      "year": 2008,
+      "category": "电脑",
+      "description": "世界上最薄的笔记本电脑，重新定义了便携式电脑。",
+      "images": [
+        "/images/products/macbook-air.jpg"
+      ],
+      "significance": "重新定义了笔记本电脑的设计标准",
+      "tags": [
+        "笔记本电脑",
+        "设计"
+      ]
+    },
+    {
+      "id": "airpods",
+      "name": "AirPods",
+      "year": 2016,
+      "category": "配件",
+      "description": "无线耳机设计的杰作，W1 芯片实现了无缝的无线体验。",
+      "images": [
+        "/images/products/airpods.jpg"
+      ],
+      "significance": "重新定义了无线耳机，成为 Apple 最受欢迎的配件",
+      "tags": [
+        "配件",
+        "无线"
+      ]
+    },
+    {
+      "id": "apple-watch",
+      "name": "Apple Watch",
+      "year": 2015,
+      "category": "配件",
+      "description": "最终成为全球最畅销的手表，重新定义了可穿戴设备。",
+      "images": [
+        "/images/products/apple-watch.png"
+      ],
+      "significance": "开创了智能手表品类，成为健康与健身的伙伴",
+      "tags": [
+        "可穿戴",
+        "健康"
+      ]
+    },
+    {
+      "id": "homepod",
+      "name": "HomePod",
+      "year": 2018,
+      "category": "音乐",
+      "description": "革命性的无线扬声器，带来了惊人的音质和 Siri 智能助手。",
+      "images": [
+        "/images/products/homepod-select-midnight-202210_FMT_WHH.png"
+      ],
+      "significance": "将 Siri 和高品质音质带入家庭",
+      "tags": [
+        "音乐",
+        "智能音箱"
+      ]
+    }
+  ]
+}

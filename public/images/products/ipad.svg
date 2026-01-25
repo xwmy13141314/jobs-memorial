@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="silveripad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8e8e8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c0c0c0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#silveripad)"/>
+  <rect x="80" y="60" width="240" height="180" rx="15" fill="#d0d0d0" stroke="#a0a0a0" stroke-width="2"/>
+  <rect x="90" y="75" width="220" height="150" fill="#1a1a1a"/>
+  <circle cx="200" cy="240" r="8" fill="#888"/>
+  <text x="200" y="265" font-family="Arial, sans-serif" font-size="18" fill="#333" text-anchor="middle">iPad (2010)</text>
+  <text x="200" y="285" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">📲 创造全新的设备类别</text>
+</svg>

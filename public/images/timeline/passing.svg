@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <defs>
+    <linearGradient id="passinggrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#cfd9df;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2ebf0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="200" fill="url(#passinggrad)"/>
+  <circle cx="150" cy="80" r="40" fill="white" opacity="0.9"/>
+  <text x="150" y="95" font-family="Arial, sans-serif" font-size="40" text-anchor="middle">⭐</text>
+  <text x="150" y="150" font-family="Arial, sans-serif" font-size="16" fill="#333" text-anchor="middle" font-weight="bold">2011年10月5日</text>
+  <text x="150" y="175" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">在加州帕洛阿尔托去世</text>
+</svg>

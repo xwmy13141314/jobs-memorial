@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="400" viewBox="0 0 300 400">
+  <defs>
+    <linearGradient id="bookGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34495e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="400" fill="url(#bookGrad2)" rx="5"/>
+  <rect x="20" y="20" width="260" height="360" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2" rx="3"/>
+  <text x="150" y="130" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle" font-weight="bold">Becoming Steve Jobs</text>
+  <text x="150" y="165" font-family="Arial, sans-serif" font-size="16" fill="#ccc" text-anchor="middle">成为史蒂夫·乔布斯</text>
+  <text x="150" y="210" font-family="Arial, sans-serif" font-size="12" fill="#999" text-anchor="middle">Brent Schlender</text>
+  <text x="150" y="260" font-family="Arial, sans-serif" font-size="10" fill="#888" text-anchor="middle">「空白」岁月的真相</text>
+  <text x="150" y="280" font-family="Arial, sans-serif" font-size="10" fill="#888" text-anchor="middle">从低谷走向辉煌</text>
+</svg>

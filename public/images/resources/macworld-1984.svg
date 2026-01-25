@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="speechGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8e44ad;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#speechGrad2)" rx="8"/>
+  <circle cx="80" cy="150" r="50" fill="#fff" opacity="0.1"/>
+  <text x="80" y="165" font-family="Arial, sans-serif" font-size="40" fill="white" text-anchor="middle" opacity="0.8">💻</text>
+  <text x="240" y="100" font-family="Arial, sans-serif" font-size="26" fill="white" font-weight="bold">Macintosh 发布会</text>
+  <text x="240" y="140" font-family="Arial, sans-serif" font-size="14" fill="#d7bde2">Macworld 1984</text>
+  <text x="240" y="180" font-family="Arial, sans-serif" font-size="11" fill="#e8d5f2">从袋子里拿出 Mac</text>
+  <text x="240" y="200" font-family="Arial, sans-serif" font-size="11" fill="#e8d5f2">的画面成为传奇</text>
+  <rect x="200" y="240" width="60" height="3" fill="#fff" opacity="0.6" rx="1"/>
+</svg>

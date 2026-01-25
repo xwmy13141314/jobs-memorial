@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="articleGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#articleGrad1)" rx="8"/>
+  <circle cx="80" cy="150" r="50" fill="#fff" opacity="0.1"/>
+  <text x="80" y="165" font-family="Arial, sans-serif" font-size="40" fill="white" text-anchor="middle" opacity="0.8">📝</text>
+  <text x="240" y="90" font-family="Arial, sans-serif" font-size="22" fill="white" font-weight="bold">Think Different:</text>
+  <text x="240" y="120" font-family="Arial, sans-serif" font-size="22" fill="white" font-weight="bold">乔布斯的创新哲学</text>
+  <text x="240" y="155" font-family="Arial, sans-serif" font-size="12" fill="#ddd5f0">Rob Siltanen</text>
+  <text x="240" y="190" font-family="Arial, sans-serif" font-size="10" fill="#d1c4e9">著名广告文案撰稿人揭秘</text>
+  <text x="240" y="210" font-family="Arial, sans-serif" font-size="10" fill="#d1c4e9">'Think Different' 广告背后的故事</text>
+  <rect x="200" y="250" width="70" height="3" fill="#fff" opacity="0.6" rx="1"/>
+</svg>

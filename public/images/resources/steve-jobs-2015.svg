@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="movieGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#34495e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2c3e50;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#movieGrad3)" rx="8"/>
+  <circle cx="200" cy="90" r="40" fill="#fff" opacity="0.15"/>
+  <text x="200" y="105" font-family="Arial, sans-serif" font-size="35" fill="white" text-anchor="middle">🎭</text>
+  <text x="200" y="165" font-family="Arial, sans-serif" font-size="28" fill="white" font-weight="bold">史蒂夫·乔布斯</text>
+  <text x="200" y="200" font-family="Arial, sans-serif" font-size="16" fill="#bdc3c7">Steve Jobs (2015)</text>
+  <text x="200" y="230" font-family="Arial, sans-serif" font-size="10" fill="#95a5a6">迈克尔·法斯宾德主演</text>
+  <text x="200" y="250" font-family="Arial, sans-serif" font-size="10" fill="#95a5a6">丹尼·鲍伊尔导演</text>
+  <text x="200" y="268" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">聚焦三次产品发布会</text>
+</svg>

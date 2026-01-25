@@ -1,0 +1,225 @@
+{
+  "resources": [
+    {
+      "id": "steve-jobs-book",
+      "type": "书籍",
+      "title": "史蒂夫·乔布斯传",
+      "author": "沃尔特·艾萨克森",
+      "cover": "/images/resources/steve-jobs-book.jpg",
+      "description": "这是唯一乔布斯官方授权的传记，深入讲述了乔布斯的一生，包括他的创造力、完美主义和激烈个性。",
+      "rating": 5,
+      "links": {
+        "purchase": "https://book.douban.com/subject/10608098/",
+        "official": ""
+      }
+    },
+    {
+      "id": "becoming-steve-jobs",
+      "type": "书籍",
+      "title": "成为史蒂夫·乔布斯",
+      "author": "Brent Schlender",
+      "cover": "/images/resources/becoming-steve-jobs.jpg",
+      "description": "这本书揭示了乔布斯人生中「空白」的岁月，以及他如何从低谷走向辉煌。",
+      "rating": 4,
+      "links": {
+        "purchase": "https://book.douban.com/subject/26669784/",
+        "official": ""
+      }
+    },
+    {
+      "id": "innovation-secrets",
+      "type": "书籍",
+      "title": "乔布斯的创新秘密",
+      "author": "Carmine Gallo",
+      "cover": "/images/resources/innovation-secrets.jpg",
+      "description": "深入解析乔布斯的创新理念和领导原则，揭秘 Apple 的成功秘诀。",
+      "rating": 4,
+      "links": {
+        "purchase": "https://book.douban.com/subject/5366709/",
+        "official": ""
+      }
+    },
+    {
+      "id": "steve-jobs-lost-interview",
+      "type": "纪录片",
+      "title": "史蒂夫·乔布斯：失落的访谈",
+      "author": "Robert Cringely",
+      "cover": "/images/resources/lost-interview.jpg",
+      "description": "1995年的一段珍贵访谈，乔布斯畅谈了他的童年、Apple 早期岁月以及被解雇的经历。",
+      "rating": 5,
+      "links": {
+        "purchase": "",
+        "official": "https://www.youtube.com/watch?v=6W2Fs_DGeEY"
+      }
+    },
+    {
+      "id": "steve-jobs-one-last-thing",
+      "type": "纪录片",
+      "title": "史蒂夫·乔布斯：最后的事",
+      "author": "PBS",
+      "cover": "/images/resources/one-last-thing.jpg",
+      "description": "PBS 深入探讨乔布斯的生平和遗产，包含大量独家采访。",
+      "rating": 4,
+      "links": {
+        "purchase": "",
+        "official": "https://www.pbs.org/steve-jobs/"
+      }
+    },
+    {
+      "id": "inside-apple",
+      "type": "纪录片",
+      "title": "苹果帝国内幕",
+      "author": "Discovery",
+      "cover": "/images/resources/inside-apple.jpg",
+      "description": "深入 Apple 内部，揭示其产品设计和公司文化的秘密。",
+      "rating": 4,
+      "links": {
+        "purchase": "",
+        "official": ""
+      }
+    },
+    {
+      "id": "pirates-silicon-valley",
+      "type": "电影",
+      "title": "硅谷海盗",
+      "author": "Martyn Burke",
+      "cover": "/images/resources/pirates-silicon-valley.jpg",
+      "description": "讲述乔布斯和比尔·盖茨之间竞争的电视电影，诺亚·怀尔饰演乔布斯。",
+      "rating": 3,
+      "links": {
+        "purchase": "",
+        "official": ""
+      }
+    },
+    {
+      "id": "jobs-2013",
+      "type": "电影",
+      "title": "乔布斯",
+      "author": "Joshua Michael Stern",
+      "cover": "/images/resources/jobs-2013.jpg",
+      "description": "阿什顿·库彻饰演乔布斯，聚焦他人生中的关键转折点。",
+      "rating": 3,
+      "links": {
+        "purchase": "",
+        "official": ""
+      }
+    },
+    {
+      "id": "steve-jobs-2015",
+      "type": "电影",
+      "title": "史蒂夫·乔布斯",
+      "author": "Danny Boyle",
+      "cover": "/images/resources/steve-jobs-2015.jpg",
+      "description": "改编自剧本《乔布斯》，迈克尔·法斯宾德饰演乔布斯，聚焦三次产品发布会。",
+      "rating": 4,
+      "links": {
+        "purchase": "",
+        "official": ""
+      }
+    },
+    {
+      "id": "stanford-2005",
+      "type": "演讲",
+      "title": "斯坦福大学毕业典礼演讲",
+      "author": "史蒂夫·乔布斯",
+      "cover": "/images/resources/stanford-2005.jpg",
+      "description": "2005年斯坦福大学毕业典礼上的经典演讲，'Stay hungry, stay foolish'的出处。",
+      "rating": 5,
+      "links": {
+        "purchase": "",
+        "official": "https://www.youtube.com/watch?v=UF8uR6Z6KLc"
+      }
+    },
+    {
+      "id": "macworld-1984",
+      "type": "演讲",
+      "title": "Macintosh 发布会",
+      "author": "史蒂夫·乔布斯",
+      "cover": "/images/resources/macworld-1984.jpg",
+      "description": "1984年 Macintosh 发布会的经典演讲，乔布斯从袋子里拿出 Mac 的画面成为传奇。",
+      "rating": 5,
+      "links": {
+        "purchase": "",
+        "official": "https://www.youtube.com/watch?v=2B-XwPjn9TY"
+      }
+    },
+    {
+      "id": "macworld-2007",
+      "type": "演讲",
+      "title": "iPhone 发布会",
+      "author": "史蒂夫·乔布斯",
+      "cover": "/images/resources/macworld-2007.jpg",
+      "description": "2007年 Macworld 大会，乔布斯发布了革命性的 iPhone。",
+      "rating": 5,
+      "links": {
+        "purchase": "",
+        "official": "https://www.youtube.com/watch?v=MnrJzXM7xiA"
+      }
+    },
+    {
+      "id": "d8-conference",
+      "type": "演讲",
+      "title": "D8 大会访谈",
+      "author": "史蒂夫·乔布斯",
+      "cover": "/images/resources/d8-conference.jpg",
+      "description": "2010年 D8 大会上的访谈，乔布斯谈论了 Google、Adobe 和 Flash 等话题。",
+      "rating": 4,
+      "links": {
+        "purchase": "",
+        "official": "https://www.youtube.com/watch?v=-aPY_NsXMT8"
+      }
+    },
+    {
+      "id": "think-different-article",
+      "type": "文章",
+      "title": "Think Different: 乔布斯的创新哲学",
+      "author": "Rob Siltanen",
+      "cover": "/images/resources/think-different.jpg",
+      "description": "著名广告文案撰稿人揭秘 'Think Different' 广告背后的故事。",
+      "rating": 5,
+      "links": {
+        "purchase": "",
+        "official": "https://www.forbes.com/sites/onmarketing/2011/10/06/the-real-story-behind-apples-think-different-campaign/"
+      }
+    },
+    {
+      "id": "design-philosophy",
+      "type": "文章",
+      "title": "乔布斯的设计哲学",
+      "author": "Jony Ive",
+      "cover": "/images/resources/design-philosophy.jpg",
+      "description": "Apple 设计总监 Jony Ive 谈论与乔布斯共事的设计理念。",
+      "rating": 4,
+      "links": {
+        "purchase": "",
+        "official": ""
+      }
+    },
+    {
+      "id": "apple-design-process",
+      "type": "文章",
+      "title": "Apple 的设计流程揭秘",
+      "author": "Fast Company",
+      "cover": "/images/resources/apple-design-process.jpg",
+      "description": "深入 Apple 设计工作室，了解其独特的设计流程。",
+      "rating": 4,
+      "links": {
+        "purchase": "",
+        "official": "https://www.fastcompany.com/3022653/how-apple-designed-the-year-2013"
+      }
+    },
+    {
+      "id": "product-launch-secrets",
+      "type": "文章",
+      "title": "乔布斯产品发布会的秘密",
+      "author": "Business Insider",
+      "cover": "/images/resources/product-launch-secrets.jpg",
+      "description": "揭秘乔布斯产品发布会的准备工作和演讲技巧。",
+      "rating": 4,
+      "links": {
+        "purchase": "",
+        "official": ""
+      }
+    }
+  ]
+}

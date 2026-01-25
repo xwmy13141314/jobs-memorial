@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="articleGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#articleGrad3)" rx="8"/>
+  <circle cx="80" cy="150" r="50" fill="#fff" opacity="0.1"/>
+  <text x="80" y="165" font-family="Arial, sans-serif" font-size="40" fill="white" text-anchor="middle" opacity="0.8">⚙️</text>
+  <text x="240" y="100" font-family="Arial, sans-serif" font-size="24" fill="white" font-weight="bold">Apple 的设计流程揭秘</text>
+  <text x="240" y="135" font-family="Arial, sans-serif" font-size="12" fill="#d0f2fc">Fast Company</text>
+  <text x="240" y="175" font-family="Arial, sans-serif" font-size="10" fill="#b8e6f6">深入 Apple 设计工作室</text>
+  <text x="240" y="195" font-family="Arial, sans-serif" font-size="10" fill="#b8e6f6">了解其独特的设计流程</text>
+  <rect x="200" y="240" width="70" height="3" fill="#fff" opacity="0.6" rx="1"/>
+</svg>

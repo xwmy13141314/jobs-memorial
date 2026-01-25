@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="speechGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#speechGrad3)" rx="8"/>
+  <circle cx="80" cy="150" r="50" fill="#fff" opacity="0.1"/>
+  <text x="80" y="165" font-family="Arial, sans-serif" font-size="40" fill="white" text-anchor="middle" opacity="0.8">📱</text>
+  <text x="240" y="90" font-family="Arial, sans-serif" font-size="28" fill="white" font-weight="bold">iPhone 发布会</text>
+  <text x="240" y="125" font-family="Arial, sans-serif" font-size="14" fill="#a6c8e5">Macworld 2007</text>
+  <text x="240" y="165" font-family="Arial, sans-serif" font-size="11" fill="#d4e6f1">重新发明了手机</text>
+  <text x="240" y="185" font-family="Arial, sans-serif" font-size="11" fill="#d4e6f1">革命性的产品</text>
+  <text x="240" y="220" font-family="Arial, sans-serif" font-size="22" fill="white" font-weight="bold">"An iPod, a phone,</text>
+  <text x="240" y="250" font-family="Arial, sans-serif" font-size="22" fill="white" font-weight="bold">an internet communicator"</text>
+</svg>

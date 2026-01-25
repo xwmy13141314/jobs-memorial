@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="grad19" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fddb92;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d1fdff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#grad19)"/>
+  <text x="40" y="80" font-family="Georgia, serif" font-size="120" fill="rgba(255,255,255,0.4)">"</text>
+  <text x="300" y="160" font-family="Georgia, serif" font-size="20" fill="#333" text-anchor="middle" font-weight="bold">Getting fired from Apple</text>
+  <text x="300" y="195" font-family="Georgia, serif" font-size="20" fill="#333" text-anchor="middle" font-weight="bold">was the best thing</text>
+  <text x="300" y="230" font-family="Georgia, serif" font-size="20" fill="#333" text-anchor="middle" font-weight="bold">that could have ever happened to me.</text>
+  <text x="300" y="290" font-family="Arial, sans-serif" font-size="14" fill="#555" text-anchor="middle">被拒绝是生活的一部分，但你不能让它阻止你</text>
+  <text x="300" y="350" font-family="Arial, sans-serif" font-size="12" fill="#777" text-anchor="middle">—— 斯坦福大学演讲 (2005)</text>
+</svg>

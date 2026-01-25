@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="grad17" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fecfef;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#feada6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#grad17)"/>
+  <text x="40" y="80" font-family="Georgia, serif" font-size="120" fill="rgba(255,255,255,0.3)">"</text>
+  <text x="300" y="150" font-family="Georgia, serif" font-size="18" fill="#333" text-anchor="middle" font-weight="bold">If today were the last day of my life,</text>
+  <text x="300" y="185" font-family="Georgia, serif" font-size="18" fill="#333" text-anchor="middle" font-weight="bold">would I want to do</text>
+  <text x="300" y="220" font-family="Georgia, serif" font-size="18" fill="#333" text-anchor="middle" font-weight="bold">what I am about to do today?</text>
+  <text x="300" y="285" font-family="Arial, sans-serif" font-size="14" fill="#555" text-anchor="middle">如果今天是我生命的最后一天，我会做我现在正在做的事吗？</text>
+  <text x="300" y="350" font-family="Arial, sans-serif" font-size="12" fill="#777" text-anchor="middle">—— 斯坦福大学演讲 (2005)</text>
+</svg>

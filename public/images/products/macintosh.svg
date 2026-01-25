@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="cream" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fefefe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e8e8e8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#cream)"/>
+  <rect x="100" y="60" width="200" height="180" rx="20" fill="#f0f0f0" stroke="#ccc" stroke-width="2"/>
+  <rect x="120" y="90" width="160" height="120" fill="#1a1a1a"/>
+  <ellipse cx="200" cy="195" rx="30" ry="8" fill="#ccc"/>
+  <text x="200" y="260" font-family="Arial, sans-serif" font-size="20" fill="#333" text-anchor="middle">Macintosh (1984)</text>
+  <text x="200" y="285" font-family="Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle">🍊 哪个更重要</text>
+</svg>

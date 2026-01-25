@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="docGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#docGrad2)" rx="8"/>
+  <circle cx="80" cy="150" r="50" fill="#fff" opacity="0.1"/>
+  <text x="80" y="165" font-family="Arial, sans-serif" font-size="40" fill="white" text-anchor="middle" opacity="0.8">📺</text>
+  <text x="240" y="100" font-family="Arial, sans-serif" font-size="26" fill="white" font-weight="bold">史蒂夫·乔布斯</text>
+  <text x="240" y="140" font-family="Arial, sans-serif" font-size="20" fill="#dbeafe">最后的事</text>
+  <text x="240" y="175" font-family="Arial, sans-serif" font-size="12" fill="#93c5fd">One Last Thing (PBS)</text>
+  <text x="240" y="220" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd">深入探讨生平与遗产</text>
+  <text x="240" y="238" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd">包含大量独家采访</text>
+</svg>

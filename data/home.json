@@ -1,0 +1,37 @@
+{
+  "hero": {
+    "title": "史蒂夫·乔布斯",
+    "years": "1955 - 2011",
+    "subtitle": "Think Different"
+  },
+  "highlights": [
+    {
+      "id": "timeline",
+      "title": "生平时间线",
+      "description": "回顾乔布斯从出生到逝世的人生轨迹与重要转折点",
+      "image": "/images/highlights/timeline.jpg",
+      "link": "/timeline"
+    },
+    {
+      "id": "design",
+      "title": "设计理念",
+      "description": "学习乔布斯的产品设计哲学与思维方法",
+      "image": "/images/highlights/design.jpg",
+      "link": "/design"
+    },
+    {
+      "id": "products",
+      "title": "伟大产品",
+      "description": "探索乔布斯创造的改变世界的产品",
+      "image": "/images/highlights/products.jpg",
+      "link": "/products"
+    },
+    {
+      "id": "quotes",
+      "title": "经典语录",
+      "description": "感受乔布斯的思想精髓与精神遗产",
+      "image": "/images/highlights/quotes.jpg",
+      "link": "/quotes"
+    }
+  ]
+}

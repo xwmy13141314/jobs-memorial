@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="articleGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#articleGrad2)" rx="8"/>
+  <circle cx="80" cy="150" r="50" fill="#fff" opacity="0.1"/>
+  <text x="80" y="165" font-family="Arial, sans-serif" font-size="40" fill="white" text-anchor="middle" opacity="0.8">🎨</text>
+  <text x="240" y="100" font-family="Arial, sans-serif" font-size="26" fill="white" font-weight="bold">乔布斯的设计哲学</text>
+  <text x="240" y="140" font-family="Arial, sans-serif" font-size="12" fill="#fad4e0">Jony Ive</text>
+  <text x="240" y="175" font-family="Arial, sans-serif" font-size="10" fill="#f9d0da">Apple 设计总监</text>
+  <text x="240" y="195" font-family="Arial, sans-serif" font-size="10" fill="#f9d0da">谈论与乔布斯共事的设计理念</text>
+  <rect x="200" y="240" width="60" height="3" fill="#fff" opacity="0.6" rx="1"/>
+</svg>

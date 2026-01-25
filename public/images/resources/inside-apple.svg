@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="docGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8e44ad;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#docGrad3)" rx="8"/>
+  <circle cx="80" cy="150" r="50" fill="#fff" opacity="0.1"/>
+  <text x="80" y="165" font-family="Arial, sans-serif" font-size="40" fill="white" text-anchor="middle" opacity="0.8">🍎</text>
+  <text x="240" y="100" font-family="Arial, sans-serif" font-size="28" fill="white" font-weight="bold">苹果帝国内幕</text>
+  <text x="240" y="140" font-family="Arial, sans-serif" font-size="16" fill="#e8d5f2">Inside Apple</text>
+  <text x="240" y="170" font-family="Arial, sans-serif" font-size="12" fill="#d7bde2">Discovery Channel</text>
+  <text x="240" y="220" font-family="Arial, sans-serif" font-size="10" fill="#d7bde2">深入 Apple 内部</text>
+  <text x="240" y="240" font-family="Arial, sans-serif" font-size="10" fill="#d7bde2">揭示产品设计与文化秘密</text>
+</svg>

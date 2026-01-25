@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <defs>
+    <linearGradient id="ipodgrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#89f7fe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#66a6ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="200" fill="url(#ipodgrad)"/>
+  <circle cx="150" cy="80" r="40" fill="white" opacity="0.9"/>
+  <text x="150" y="95" font-family="Arial, sans-serif" font-size="40" text-anchor="middle">🎵</text>
+  <text x="150" y="150" font-family="Arial, sans-serif" font-size="16" fill="#333" text-anchor="middle" font-weight="bold">2001年10月23日</text>
+  <text x="150" y="175" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">iPod 发布</text>
+</svg>

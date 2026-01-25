@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="docGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a252f;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#docGrad1)" rx="8"/>
+  <circle cx="80" cy="150" r="50" fill="#fff" opacity="0.1"/>
+  <text x="80" y="165" font-family="Arial, sans-serif" font-size="40" fill="white" text-anchor="middle" opacity="0.8">🎬</text>
+  <text x="240" y="100" font-family="Arial, sans-serif" font-size="28" fill="white" font-weight="bold">史蒂夫·乔布斯</text>
+  <text x="240" y="140" font-family="Arial, sans-serif" font-size="20" fill="#aaa">失落的访谈</text>
+  <text x="240" y="180" font-family="Arial, sans-serif" font-size="12" fill="#888">The Lost Interview (1995)</text>
+  <text x="240" y="230" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">珍贵访谈 • 畅谈童年与早期岁月</text>
+  <rect x="200" y="260" width="80" height="3" fill="#e74c3c" rx="1"/>
+</svg>

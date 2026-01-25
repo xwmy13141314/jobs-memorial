@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="dentbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#dentbg)"/>
+  <text x="40" y="80" font-family="Georgia, serif" font-size="120" fill="rgba(255,255,255,0.3)">"</text>
+  <text x="300" y="200" font-family="Georgia, serif" font-size="28" fill="white" text-anchor="middle" font-weight="bold">
+    <tspan x="300" dy="0">We're here to put a dent</tspan>
+    <tspan x="300" dy="40">in the universe.</tspan>
+  </text>
+  <text x="300" y="290" font-family="Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.9)" text-anchor="middle">
+    <tspan x="300" dy="0">我们在这里是为了在宇宙中留下痕迹</tspan>
+  </text>
+  <text x="300" y="350" font-family="Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.6)" text-anchor="middle">—— 史蒂夫·乔布斯</text>
+</svg>
