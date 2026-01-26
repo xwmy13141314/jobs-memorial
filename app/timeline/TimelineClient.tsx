@@ -119,7 +119,7 @@ export default function TimelineClient() {
                 className="flex-shrink-0 w-80 snap-start"
               >
                 <div
-                  className={`bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl ${
+                  className={`bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl h-[480px] flex flex-col ${
                     expandedId === event.id ? 'ring-2 ring-blue-500' : ''
                   }`}
                 >
@@ -139,7 +139,7 @@ export default function TimelineClient() {
                       )}
                     </div>
                   )}
-                  <div className="p-4">
+                  <div className="p-4 flex-1 flex flex-col">
                     <div className="text-sm text-blue-600 font-bold mb-2">
                       {event.year}
                     </div>
@@ -147,25 +147,26 @@ export default function TimelineClient() {
                       {event.title}
                     </h3>
                     {expandedId === event.id ? (
-                      <p className="text-gray-600 text-sm mb-4">
+                      <p className="text-gray-600 text-sm mb-4 flex-1">
                         {event.description}
                       </p>
                     ) : (
-                      <p className="text-gray-500 text-sm mb-4 line-clamp-3">
+                      <p className="text-gray-500 text-sm mb-4 line-clamp-3 flex-1">
                         {event.description}
                       </p>
                     )}
-                    <div className="flex flex-wrap gap-1 mb-3">
-                      {event.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="flex gap-2">
+                    <div className="mt-auto">
+                      <div className="flex flex-wrap gap-1 mb-3">
+                        {event.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex gap-2">
                       <button
                         onClick={() => toggleExpand(event.id)}
                         className="flex-1 py-2 px-3 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors"
@@ -178,6 +179,7 @@ export default function TimelineClient() {
                       >
                         详情
                       </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -210,7 +212,7 @@ export default function TimelineClient() {
           {events.map((event) => (
             <div
               key={event.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden"
+              className="bg-white rounded-xl shadow-lg overflow-hidden h-[340px] flex flex-col"
             >
               {event.image && (
                 <div className="h-36 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center relative overflow-hidden">
@@ -223,7 +225,7 @@ export default function TimelineClient() {
                   />
                 </div>
               )}
-              <div className="p-4">
+              <div className="p-4 flex-1 flex flex-col">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-blue-600 font-bold">
                     {event.year}
@@ -237,15 +239,17 @@ export default function TimelineClient() {
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {event.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                <p className="text-gray-600 text-sm mb-3 line-clamp-2 flex-1">
                   {event.description}
                 </p>
-                <button
+                <div className="mt-auto">
+                  <button
                   onClick={() => openModal(event)}
                   className="w-full py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
                 >
                   查看详情 →
                 </button>
+                </div>
               </div>
             </div>
           ))}

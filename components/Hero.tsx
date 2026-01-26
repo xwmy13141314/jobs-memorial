@@ -78,8 +78,15 @@ export default function Hero() {
         <div className="mb-12">
           <p className="text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Think Different</p>
         </div>
-        <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">改变世界的创新者、Apple 公司联合创始人<br className="hidden md:block" />用科技与设计重新定义了现代生活</p>
-        <button onClick={scrollToHighlights} className="group relative px-8 py-4 bg-white text-gray-900 rounded-full font-semibold text-lg overflow-hidden transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl">
+        <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">产品教父</span>
+          <span className="mx-2">·</span>
+          改变世界的创新者、Apple 公司联合创始人
+          <br className="hidden md:block" />
+          <span className="hidden md:inline mx-2"></span>
+          用科技与设计重新定义了现代生活
+        </p>
+        <button onClick={scrollToHighlights} className="mt-20 group relative px-8 py-4 bg-white text-gray-900 rounded-full font-semibold text-lg overflow-hidden transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl">
           <span className="relative z-10 flex items-center gap-2">
             开始探索
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -88,14 +95,6 @@ export default function Hero() {
           </span>
           <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </button>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-white/50 text-sm">向下滚动</span>
-            <svg className="w-6 h-6 text-white/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </div>
-        </div>
       </div>
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent" />
     </section>
