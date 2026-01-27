@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className='bg-gray-50 border-t border-gray-200'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-8'>
+        <div className='grid grid-cols-1 md:grid-cols-4 gap-8 mb-8'>
           {/* Brand */}
           <div>
             <h3 className='text-xl font-bold text-gray-900 mb-4'>
@@ -77,17 +77,28 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className='text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wider'>
+              联系方式
+            </h4>
+            <img
+              src='/wechat-qr.png'
+              alt='微信二维码'
+              className='w-44 h-44'
+              width={176}
+              height={176}
+            />
+          </div>
         </div>
 
         {/* Bottom Bar */}
         <div className='pt-8 border-t border-gray-200'>
           <div className='flex flex-col md:flex-row items-center justify-between gap-4'>
-            {/* Copyright */}
             <div className='text-gray-600 text-sm'>
               © {currentYear} 史蒂夫·乔布斯纪念. 保留所有权利.
             </div>
-
-            {/* Quote */}
             <div className='text-gray-500 text-sm italic text-center md:text-right'>
               "Stay hungry, stay foolish."
             </div>
