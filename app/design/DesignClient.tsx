@@ -164,8 +164,8 @@ function markdownToHtml(markdown: string): string {
   html = html.replace(/^---$/gm, '<hr class="my-8 border-gray-200" />');
 
   // Line breaks
-  html = html.replace(/\n\n/g, '</p><p class="my-4 leading-relaxed text-gray-700">');
-  html = `<p class="my-4 leading-relaxed text-gray-700">${html}</p>`;
+  html = html.replace(/\n\n/g, '</p><p class="my-4 leading-relaxed text-gray-900">');
+  html = `<p class="my-4 leading-relaxed text-gray-900">${html}</p>`;
 
   // Clean up empty paragraphs
   html = html.replace(/<p class="[^"]*"><\/p>/g, '');

@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import VisitStats from './VisitStats';
 
 export const metadata: Metadata = {
   title: '关于本站 - 史蒂夫·乔布斯致敬网站',
@@ -140,6 +141,9 @@ export default function About() {
               </div>
             </div>
           </div>
+
+          {/* Visit Statistics */}
+          <VisitStats />
 
           {/* Contact & Acknowledgments */}
           <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl shadow-lg p-8 md:p-12">

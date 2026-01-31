@@ -121,7 +121,7 @@ export default function ResourcesClient() {
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all cursor-pointer group"
               >
                 {/* Cover Image */}
-                <div className="h-48 bg-gradient-to-br from-green-100 to-teal-100 flex items-center justify-center relative overflow-hidden">
+                <div className="h-44 sm:h-48 bg-gradient-to-br from-green-100 to-teal-100 overflow-hidden relative">
                   <img
                     src={resource.cover.replace('.jpg', '.svg')}
                     alt={resource.title}
@@ -194,7 +194,7 @@ export default function ResourcesClient() {
               </div>
 
               {/* Cover */}
-              <div className="h-56 bg-gradient-to-br from-green-100 to-teal-100 rounded-xl flex items-center justify-center mb-6 overflow-hidden">
+              <div className="h-48 sm:h-52 md:h-56 bg-gradient-to-br from-green-100 to-teal-100 rounded-xl overflow-hidden mb-6">
                 <img
                   src={selectedResource.cover.replace('.jpg', '.svg')}
                   alt={selectedResource.title}

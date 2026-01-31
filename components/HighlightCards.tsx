@@ -72,7 +72,7 @@ export default function HighlightCards({ highlights }: HighlightCardsProps) {
                 className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 overflow-hidden"
               >
                 {/* 使用实际图片替代emoji图标 */}
-                <div className={"relative h-52 bg-gradient-to-br " + getGradientForIndex(index) + " flex items-center justify-center overflow-hidden"}>
+                <div className={"relative h-56 sm:h-60 md:h-64 bg-gradient-to-br " + getGradientForIndex(index) + " overflow-hidden"}>
                   {imgSrc ? (
                     <Image
                       src={imgSrc}
@@ -80,10 +80,13 @@ export default function HighlightCards({ highlights }: HighlightCardsProps) {
                       width={size.width}
                       height={size.height}
                       className="h-full w-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                      priority={index < 2}
                     />
                   ) : (
-                    <div className="text-7xl relative z-10 transform group-hover:scale-125 group-hover:rotate-3 transition-all duration-500">
-                      {getIconForHighlight(highlight.id)}
+                    <div className="h-full w-full flex items-center justify-center">
+                      <div className="text-7xl relative z-10 transform group-hover:scale-125 group-hover:rotate-3 transition-all duration-500">
+                        {getIconForHighlight(highlight.id)}
+                      </div>
                     </div>
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

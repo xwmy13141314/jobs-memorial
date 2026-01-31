@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import MouseFollower from "@/components/MouseFollower";
+import ChatWidget from "@/components/ChatWidget";
 import "./globals.css";
 
 const inter = Inter({
@@ -79,6 +80,7 @@ export default function RootLayout({
         <MouseFollower />
         <Navbar />
         {children}
+        <ChatWidget />
       </body>
     </html>
   );

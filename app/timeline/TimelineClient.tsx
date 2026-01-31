@@ -124,7 +124,7 @@ export default function TimelineClient() {
                   }`}
                 >
                   {event.image && (
-                    <div className="h-44 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center relative overflow-hidden">
+                    <div className="h-48 sm:h-52 bg-gradient-to-br from-blue-100 to-purple-100 overflow-hidden">
                       <Image
                         src={event.image}
                         alt={event.title}
@@ -215,7 +215,7 @@ export default function TimelineClient() {
               className="bg-white rounded-xl shadow-lg overflow-hidden h-[340px] flex flex-col"
             >
               {event.image && (
-                <div className="h-36 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center relative overflow-hidden">
+                <div className="h-44 bg-gradient-to-br from-blue-100 to-purple-100 overflow-hidden">
                   <Image
                     src={event.image}
                     alt={event.title}
@@ -287,7 +287,7 @@ export default function TimelineClient() {
               </div>
 
               {selectedEvent.image && (
-                <div className="h-56 bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl flex items-center justify-center mb-6 overflow-hidden">
+                <div className="h-56 sm:h-60 md:h-64 bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl overflow-hidden mb-6">
                   <Image
                     src={selectedEvent.image}
                     alt={selectedEvent.title}

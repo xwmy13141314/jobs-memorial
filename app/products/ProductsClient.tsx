@@ -166,13 +166,13 @@ export default function ProductsClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {currentProduct && (
             <div className="max-w-4xl mx-auto relative">
-              {/* Left Arrow Button */}
+              {/* Left Arrow Button - 隐藏在手机端 */}
               <button
                 onClick={(e) => {
                   e.stopPropagation();
                   goToSlide((currentIndex - 1 + filteredProducts.length) % filteredProducts.length);
                 }}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full z-20 w-14 h-14 bg-white/95 hover:bg-white shadow-xl hover:shadow-2xl rounded-full flex items-center justify-center transition-all duration-300 group"
+                className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full z-20 w-14 h-14 bg-white/95 hover:bg-white shadow-xl hover:shadow-2xl rounded-full items-center justify-center transition-all duration-300 group"
                 aria-label="上一个产品"
                 style={{ marginTop: '-8rem' }}
               >
@@ -193,13 +193,13 @@ export default function ProductsClient() {
                 onClick={() => openModal(currentProduct)}
               >
                 {/* Product Image */}
-                <div className="h-96 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 flex items-center justify-center relative">
+                <div className="h-72 sm:h-80 md:h-96 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 overflow-hidden relative">
                   <Image
                     src={getProductImage(currentProduct)}
                     alt={currentProduct.name}
                     width={getImageSize(currentProduct.id).width}
                     height={getImageSize(currentProduct.id).height}
-                    className="h-full w-full object-contain"
+                    className="h-full w-full object-cover"
                     priority
                   />
                   <div className="absolute bottom-4 right-4 px-3 py-1 bg-white/90 backdrop-blur rounded-full text-sm font-semibold">
@@ -245,13 +245,13 @@ export default function ProductsClient() {
                 </div>
               </div>
 
-              {/* Right Arrow Button */}
+              {/* Right Arrow Button - 隐藏在手机端 */}
               <button
                 onClick={(e) => {
                   e.stopPropagation();
                   goToSlide((currentIndex + 1) % filteredProducts.length);
                 }}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full z-20 w-14 h-14 bg-white/95 hover:bg-white shadow-xl hover:shadow-2xl rounded-full flex items-center justify-center transition-all duration-300 group"
+                className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-full z-20 w-14 h-14 bg-white/95 hover:bg-white shadow-xl hover:shadow-2xl rounded-full items-center justify-center transition-all duration-300 group"
                 aria-label="下一个产品"
                 style={{ marginTop: '-8rem' }}
               >
@@ -273,6 +273,28 @@ export default function ProductsClient() {
                     {currentIndex + 1} / {filteredProducts.length}
                   </span>
                 </div>
+              </div>
+
+              {/* Mobile Navigation Buttons - 只在手机端显示 */}
+              <div className="md:hidden flex justify-center gap-4 mt-6">
+                <button
+                  onClick={() => goToSlide((currentIndex - 1 + filteredProducts.length) % filteredProducts.length)}
+                  className="flex-1 max-w-[180px] py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                >
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                  </svg>
+                  上一个
+                </button>
+                <button
+                  onClick={() => goToSlide((currentIndex + 1) % filteredProducts.length)}
+                  className="flex-1 max-w-[180px] py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                >
+                  下一个
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
               </div>
             </div>
           )}
@@ -311,13 +333,13 @@ export default function ProductsClient() {
               </div>
 
               {/* Image */}
-              <div className="h-64 bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl flex items-center justify-center mb-6">
+              <div className="h-52 sm:h-56 md:h-64 bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl overflow-hidden mb-6">
                 <Image
                   src={getProductImage(selectedProduct)}
                   alt={selectedProduct.name}
                   width={getImageSize(selectedProduct.id).width}
                   height={getImageSize(selectedProduct.id).height}
-                  className="h-full w-full object-contain"
+                  className="h-full w-full object-cover"
                 />
               </div>
 
