@@ -1,5 +1,20 @@
 # 更新日志
 
+## [1.0.6] - 2026-02-02
+
+### 修复 🐛
+- **AI 对话功能修复**:
+  - 修复智谱AI API认证问题（使用JWT Token替代直接API Key）
+  - 新增 `lib/zhipu-jwt.ts` 模块处理JWT Token生成
+  - 将API路由runtime从edge改为nodejs以支持crypto模块
+  - 修复所有AI对话请求返回错误的问题
+
+### 技术改进 🔧
+- 智谱AI API Key格式兼容（id.secret → JWT Token）
+- 更好的错误处理和日志记录
+
+---
+
 ## [1.0.5] - 2026-01-31
 
 ### 新增 ✨

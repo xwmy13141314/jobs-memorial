@@ -12,12 +12,13 @@ import {
   type ChatMessage,
 } from '@/lib/ai';
 import { rateLimitCheck } from '@/lib/rate-limit';
+import { generateZhipuToken } from '@/lib/zhipu-jwt';
 
 // ============================================================================
 // API 配置
 // ============================================================================
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 // ============================================================================
@@ -114,11 +115,24 @@ export async function POST(req: NextRequest) {
     // 5. 清理用户输入
     const sanitizedMessage = sanitizeMessage(userMessage);
 
-    // 6. 获取 API Key
+    // 6. 获取 API Key 并生成 JWT Token
     const apiKey = process.env.ZHIPU_API_KEY;
     if (!apiKey) {
+      console.error('ZHIPU_API_KEY not configured');
       return Response.json(
         { error: 'service_unavailable', message: 'AI 服务未配置' },
+        { status: 503 }
+      );
+    }
+
+    // 生成 JWT Token
+    let token: string;
+    try {
+      token = generateZhipuToken(apiKey);
+    } catch (error) {
+      console.error('Failed to generate Zhipu token:', error);
+      return Response.json(
+        { error: 'service_unavailable', message: 'AI 服务配置错误' },
         { status: 503 }
       );
     }
@@ -154,7 +168,7 @@ export async function POST(req: NextRequest) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
+        'Authorization': `Bearer ${token}`,
       },
       body: JSON.stringify(requestBody),
     });
