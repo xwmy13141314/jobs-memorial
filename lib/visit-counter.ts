@@ -34,7 +34,7 @@ const IP_RECORDS_PREFIX = 'steve-jobs:ip:';
 const IP_TTL = 86400; // 24小时（秒）
 
 const DEFAULT_STATS = {
-  totalVisits: 12580,
+  totalVisits: 580,
   uniqueVisitors: 0,
 };
 
