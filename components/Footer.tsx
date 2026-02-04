@@ -1,37 +1,70 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+
+// ============================================================================
+// 类型定义
+// ============================================================================
+
+interface VisitStatsResponse {
+  success: boolean;
+  data?: {
+    totalVisits: number;
+    uniqueVisitors: number;
+    lastUpdated: number;
+    isNewVisitor?: boolean;
+  };
+  error?: string;
+}
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const [visitCount, setVisitCount] = useState<number | null>(null);
-  const [hasRecorded, setHasRecorded] = useState(false);
+  const [uniqueVisitors, setUniqueVisitors] = useState<number | null>(null);
+  const hasInitialized = useRef(false);
 
-  // 记录访问并获取统计数据
+  // 初始化访问统计
   useEffect(() => {
-    const trackVisit = async () => {
+    if (hasInitialized.current) return;
+    hasInitialized.current = true;
+
+    const initVisitCounter = async () => {
       try {
-        // 检查是否已经记录过本次访问
-        const sessionKey = 'visit_recorded';
-        const recorded = sessionStorage.getItem(sessionKey);
+        // 调用 API 记录访问并获取统计
+        const response = await fetch('/api/visit', {
+          method: 'POST',
+          cache: 'no-store',
+        });
 
-        if (!recorded) {
-          // 首次访问，调用 POST 记录
-          await fetch('/api/visit', { method: 'POST' });
-          sessionStorage.setItem(sessionKey, 'true');
+        if (response.ok) {
+          const result: VisitStatsResponse = await response.json();
+          if (result.success && result.data) {
+            setVisitCount(result.data.totalVisits);
+            setUniqueVisitors(result.data.uniqueVisitors);
+          }
+        } else {
+          // 降级：仅获取统计数据
+          const getResponse = await fetch('/api/visit');
+          if (getResponse.ok) {
+            const getResult: VisitStatsResponse = await getResponse.json();
+            if (getResult.success && getResult.data) {
+              setVisitCount(getResult.data.totalVisits);
+              setUniqueVisitors(getResult.data.uniqueVisitors);
+            }
+          }
         }
-
-        // 获取最新统计数据
-        const response = await fetch('/api/visit');
-        const data = await response.json();
-        setVisitCount(data.total);
       } catch (error) {
-        console.error('获取访问统计失败:', error);
+        console.error('访问统计初始化失败:', error);
+        // 降级显示默认值
+        setVisitCount(12580);
       }
     };
 
-    trackVisit();
+    // 延迟执行，避免阻塞页面渲染
+    setTimeout(() => {
+      initVisitCounter();
+    }, 500);
   }, []);
 
   return (
@@ -127,16 +160,30 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className='pt-8 border-t border-gray-200'>
           <div className='flex flex-col md:flex-row items-center justify-between gap-4'>
-            <div className='flex items-center gap-4 text-gray-600 text-sm'>
+            <div className='flex flex-wrap items-center gap-4 text-gray-600 text-sm'>
               <span>© {currentYear} 史蒂夫·乔布斯纪念. 保留所有权利.</span>
               {visitCount !== null && (
-                <span className='flex items-center gap-1 text-gray-500'>
-                  <svg className='w-4 h-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
-                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M15 12a3 3 0 11-6 0 3 3 0 016 0z' />
-                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z' />
-                  </svg>
-                  <span className='font-medium'>{visitCount.toLocaleString()}</span> 次访问
-                </span>
+                <>
+                  <span className='hidden sm:inline text-gray-300'>|</span>
+                  <span className='flex items-center gap-1 text-gray-500'>
+                    <svg className='w-4 h-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+                      <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M15 12a3 3 0 11-6 0 3 3 0 016 0z' />
+                      <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z' />
+                    </svg>
+                    <span className='font-medium'>{visitCount.toLocaleString()}</span> 浏览
+                  </span>
+                </>
+              )}
+              {uniqueVisitors !== null && (
+                <>
+                  <span className='hidden sm:inline text-gray-300'>|</span>
+                  <span className='flex items-center gap-1 text-gray-500'>
+                    <svg className='w-4 h-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+                      <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' />
+                    </svg>
+                    <span className='font-medium'>{uniqueVisitors.toLocaleString()}</span> 访客
+                  </span>
+                </>
               )}
             </div>
             <div className='text-gray-500 text-sm italic text-center md:text-right'>

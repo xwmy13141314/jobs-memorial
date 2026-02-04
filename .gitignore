@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# 数据文件 (动态生成，不提交)
+/data/*.json
+!/data/home.json
+!/data/products.json
+!/data/quotes.json
+!/data/resources.json
+!/data/timeline.json
+

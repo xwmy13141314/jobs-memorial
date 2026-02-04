@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import MouseFollower from "@/components/MouseFollower";
 import ChatWidget from "@/components/ChatWidget";
+import Analytics from "@/components/Analytics";
 import "./globals.css";
 
 const inter = Inter({
@@ -77,6 +78,7 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <body className={`${inter.variable} antialiased`}>
+        <Analytics />
         <MouseFollower />
         <Navbar />
         {children}
