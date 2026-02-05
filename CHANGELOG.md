@@ -1,5 +1,97 @@
 # 更新日志
 
+## [2.0.0] - 2026-02-05
+
+### 新增 ✨
+- **金句海报生成功能**:
+  - 使用 html2canvas 将 AI 回复生成精美海报
+  - 支持 1080×1080 和 1080×1920 两种尺寸
+  - 支持下载图片和复制到剪贴板
+  - 乔布斯风格设计（纯黑背景、优雅排版、Apple 水印）
+  - 智能金句提取算法（关键词权重、英文引语优先）
+
+- **Toast 提示组件**:
+  - 替代原生 alert()，提供优雅的提示反馈
+  - 支持 4 种类型：success、error、info、warning
+  - 自动消失（默认 3 秒），可配置时长
+  - 流畅的进入/退出动画
+  - 全局 ToastProvider，任意组件可使用
+
+- **移动端全屏对话**:
+  - 小屏设备（<768px）自动切换为全屏模式
+  - 响应式断点：移动端/平板/桌面端
+  - iOS 安全区域适配（刘海屏、底部指示器）
+  - 触摸友好的交互体验
+
+- **埋点数据分析系统**:
+  - 完整的事件收集系统（对话、标签、分享、错误）
+  - `/api/analytics/event` - 事件上报 API
+  - `/api/analytics/stats` - 统计数据查询 API
+  - 数据本地存储（JSON 文件）
+  - 隐私保护：IP 匿名化、90天自动过期
+
+- **通用 AI 支持**:
+  - 支持智谱 AI、DeepSeek、OpenAI 多个提供商
+  - 智能路由：根据优先级和失败率自动选择
+  - 自动故障转移（failover）
+  - 健康检查系统
+  - 提供商冷却机制（5分钟）
+
+- **对话历史持久化**:
+  - 可选的本地存储（用户可开关）
+  - 自动保存对话内容
+  - 最多保存 50 条历史，每条最多 100 条消息
+  - 30天自动过期
+  - 支持搜索历史记录
+
+### 优化 🎨
+- **ChatPanel 组件全面升级**:
+  - 集成金句海报生成按钮
+  - 集成对话历史设置面板
+  - 优化移动端布局和交互
+  - 更好的视觉反馈和动画
+
+- **Toast 替代 Alert**:
+  - 所有用户提示改用 Toast 组件
+  - 更优雅的交互体验
+
+### 技术改进 🔧
+- 新增依赖：
+  - `html2canvas` - 海报生成
+  - `@ai-sdk/deepseek` - DeepSeek SDK
+  - `@ai-sdk/openai` - OpenAI SDK
+  - `clsx` + `tailwind-merge` - 类名合并工具
+
+- 新增文件：
+  - `components/Toast.tsx` - Toast 组件
+  - `components/ToastProvider.tsx` - Toast 上下文
+  - `components/QuotePoster.tsx` - 海报预览组件
+  - `components/ChatHistorySettings.tsx` - 历史设置组件
+  - `lib/quote-poster.ts` - 海报生成工具
+  - `lib/analytics.ts` - 埋点系统
+  - `lib/ai-config.ts` - AI 配置
+  - `lib/ai-router.ts` - AI 路由器
+  - `lib/ai-health.ts` - AI 健康检查
+  - `lib/chat-history.ts` - 对话历史管理
+  - `lib/utils.ts` - 工具函数库
+  - `types/analytics.ts` - 埋点类型定义
+  - `app/api/analytics/event/route.ts` - 事件上报 API
+  - `app/api/analytics/stats/route.ts` - 统计查询 API
+
+- 更新文件：
+  - `app/layout.tsx` - 添加 ToastProvider
+  - `app/globals.css` - 添加 iOS 安全区域支持
+  - `components/ChatPanel.tsx` - 集成所有新功能
+
+### 文档 📚
+- 新增 `PRD/` 文件夹：
+  - `PRD_乔布斯纪念馆_v1.0.md` - v1.0 版本 PRD
+  - `PRD_乔布斯纪念馆AI升级_v2.2.md` - v2.2 版本 PRD
+  - `PRD_乔布斯纪念馆AI升级_v2.3.md` - v2.3 全量优化版 PRD
+  - `README.md` - PRD 索引和版本演进图
+
+---
+
 ## [1.1.0] - 2026-02-04
 
 ### 新增 ✨

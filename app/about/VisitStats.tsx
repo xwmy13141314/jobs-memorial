@@ -3,8 +3,8 @@
 import { useState, useEffect } from 'react';
 
 interface VisitData {
-  total: number;
-  today: number;
+  totalVisits: number;
+  uniqueVisitors: number;
   lastUpdated: string;
 }
 
@@ -16,8 +16,12 @@ export default function VisitStats() {
     const fetchStats = async () => {
       try {
         const response = await fetch('/api/visit');
-        const data = await response.json();
-        setVisitData(data);
+        const result = await response.json();
+
+        // 解析 API 返回的数据结构
+        if (result.success && result.data) {
+          setVisitData(result.data);
+        }
       } catch (error) {
         console.error('获取统计数据失败:', error);
       } finally {
@@ -29,18 +33,24 @@ export default function VisitStats() {
   }, []);
 
   // 格式化最后更新时间
-  const formatLastUpdate = (dateString: string) => {
-    const date = new Date(dateString);
-    const now = new Date();
-    const diffMs = now.getTime() - date.getTime();
-    const diffMins = Math.floor(diffMs / 60000);
+  const formatLastUpdate = (dateString: string | undefined) => {
+    if (!dateString) return '未知';
 
-    if (diffMins < 1) return '刚刚';
-    if (diffMins < 60) return `${diffMins} 分钟前`;
-    const diffHours = Math.floor(diffMins / 60);
-    if (diffHours < 24) return `${diffHours} 小时前`;
-    const diffDays = Math.floor(diffHours / 24);
-    return `${diffDays} 天前`;
+    try {
+      const date = new Date(dateString);
+      const now = new Date();
+      const diffMs = now.getTime() - date.getTime();
+      const diffMins = Math.floor(diffMs / 60000);
+
+      if (diffMins < 1) return '刚刚';
+      if (diffMins < 60) return `${diffMins} 分钟前`;
+      const diffHours = Math.floor(diffMins / 60);
+      if (diffHours < 24) return `${diffHours} 小时前`;
+      const diffDays = Math.floor(diffHours / 24);
+      return `${diffDays} 天前`;
+    } catch {
+      return '未知';
+    }
   };
 
   return (
@@ -60,18 +70,18 @@ export default function VisitStats() {
           <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 text-center">
             <div className="text-4xl mb-3">👁️</div>
             <div className="text-3xl font-bold text-gray-900 mb-2">
-              {visitData.total.toLocaleString()}
+              {visitData.totalVisits.toLocaleString()}
             </div>
             <div className="text-sm text-gray-600">总访问量</div>
           </div>
 
-          {/* 今日访问 */}
+          {/* 访客数 */}
           <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 text-center">
-            <div className="text-4xl mb-3">📈</div>
+            <div className="text-4xl mb-3">👥</div>
             <div className="text-3xl font-bold text-gray-900 mb-2">
-              {visitData.today.toLocaleString()}
+              {visitData.uniqueVisitors.toLocaleString()}
             </div>
-            <div className="text-sm text-gray-600">今日访问</div>
+            <div className="text-sm text-gray-600">访客数</div>
           </div>
 
           {/* 最后更新 */}

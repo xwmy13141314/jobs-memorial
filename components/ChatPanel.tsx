@@ -8,6 +8,33 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import { PRESET_QUESTIONS } from '@/lib/ai';
+import { ShareButton } from '@/components/QuotePoster';
+import { useToast } from '@/components/ToastProvider';
+import { ChatHistorySettings } from '@/components/ChatHistorySettings';
+
+// ============================================================================
+// 响应式 Hook
+// ============================================================================
+
+function useMediaQuery(query: string): boolean {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    setMatches(media.matches);
+
+    const listener = () => setMatches(media.matches);
+    media.addEventListener('change', listener);
+
+    return () => media.removeEventListener('change', listener);
+  }, [query]);
+
+  return matches;
+}
+
+function cn(...classes: (string | boolean | undefined | null)[]): string {
+  return classes.filter(Boolean).join(' ');
+}
 
 // ============================================================================
 // 类型定义
@@ -44,6 +71,10 @@ export default function ChatPanel({
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
+  // 响应式检测
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isTablet = useMediaQuery('(min-width: 768px) and (max-width: 1024px)');
+
   // 自动滚动到底部
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -79,10 +110,21 @@ export default function ChatPanel({
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 20, scale: 0.95 }}
       transition={{ duration: 0.2 }}
-      className="fixed top-1/2 right-24 -translate-y-1/2 max-w-[calc(100vw-7rem)] max-h-[80vh] sm:max-w-[400px] sm:max-h-[550px] bg-black/95 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl overflow-hidden flex flex-col z-50"
+      className={cn(
+        "bg-black/95 backdrop-blur-xl border border-white/20 shadow-2xl overflow-hidden flex flex-col z-50",
+        // 移动端：全屏
+        isMobile && "fixed inset-0 rounded-none",
+        // 平板：右侧面板
+        isTablet && "fixed top-4 right-4 bottom-4 w-[400px] rounded-3xl",
+        // 桌面端：居中弹窗
+        !isMobile && !isTablet && "fixed top-1/2 right-24 -translate-y-1/2 max-w-[420px] max-h-[550px] rounded-3xl"
+      )}
     >
       {/* 头部 */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
+      <div className={cn(
+        "flex items-center justify-between border-b border-white/10",
+        isMobile ? "px-4 py-4" : "px-4 py-3"
+      )}>
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
             <svg viewBox="0 0 24 24" className="w-4 h-4 text-white" fill="currentColor">
@@ -122,14 +164,20 @@ export default function ChatPanel({
       </div>
 
       {/* 消息区域 */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4 min-h-[200px] max-h-[300px]">
+      <div className={cn(
+        "overflow-y-auto p-4 space-y-4",
+        isMobile ? "flex-1" : "min-h-[200px] max-h-[300px]"
+      )}>
         {messages.length === 0 ? (
           // 初始状态 - 显示预设问题
           <div className="space-y-3">
             <p className="text-white/60 text-sm text-center">
               在荒野中也要保持优雅和品味
             </p>
-            <div className="grid grid-cols-2 gap-2">
+            <div className={cn(
+              "grid gap-2",
+              isMobile ? "grid-cols-1" : "grid-cols-2"
+            )}>
               {PRESET_QUESTIONS.map((preset) => (
                 <button
                   key={preset.id}
@@ -167,7 +215,10 @@ export default function ChatPanel({
       </div>
 
       {/* 输入区域 */}
-      <div className="p-3 border-t border-white/10">
+      <div className={cn(
+        "border-t border-white/10",
+        isMobile ? "p-4 pb-safe" : "p-3"
+      )}>
         <div className="flex items-end gap-2">
           <textarea
             ref={textareaRef}
@@ -206,6 +257,9 @@ export default function ChatPanel({
           </div>
         )}
       </div>
+
+      {/* 对话历史设置 */}
+      <ChatHistorySettings />
     </motion.div>
   );
 }
@@ -254,15 +308,7 @@ function MessageBubble({ message }: { message: Message }) {
 
         {/* 分享按钮 (仅 AI 消息) */}
         {!isUser && message.content.length > 20 && (
-          <button
-            onClick={() => shareQuote(message.content)}
-            className="mt-2 flex items-center gap-1 text-white/40 hover:text-white/60 text-[10px] transition-colors"
-          >
-            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-            </svg>
-            分享金句
-          </button>
+          <ShareButton message={message.content} />
         )}
       </div>
     </motion.div>
@@ -295,18 +341,3 @@ function TypingIndicator() {
   );
 }
 
-// ============================================================================
-// 辅助函数: 分享金句
-// ============================================================================
-
-function shareQuote(content: string) {
-  // 提取金句
-  const sentences = content.split(/[。！？.!?]/).filter(s => s.trim().length > 10);
-  const quote = sentences[0]?.trim() || content.slice(0, 100);
-
-  // 复制到剪贴板
-  navigator.clipboard.writeText(`"${quote}" — Steve Jobs`);
-
-  // 显示提示
-  alert('金句已复制到剪贴板！');
-}
