@@ -4,7 +4,7 @@
 
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { extractQuote, generateQuotePoster, downloadImage, blobToDataUrl } from '@/lib/quote-poster';
 import { useToast } from './ToastProvider';
@@ -86,9 +86,9 @@ export function QuotePosterModal({ message, onClose }: QuotePosterProps) {
   }, [preview, toast]);
 
   // 打开时自动生成
-  useState(() => {
+  useEffect(() => {
     generatePoster();
-  });
+  }, [generatePoster]);
 
   return (
     <motion.div

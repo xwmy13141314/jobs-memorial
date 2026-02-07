@@ -43,7 +43,10 @@ export function generateZhipuToken(apiKey: string): string {
   const signature = crypto
     .createHmac('sha256', secret)
     .update(dataToSign)
-    .digest('base64url');
+    .digest('base64')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_')
+    .replace(/=/g, '');
 
   return `${dataToSign}.${signature}`;
 }

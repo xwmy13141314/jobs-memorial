@@ -262,7 +262,7 @@ export class AIRouter {
    * 获取失败统计
    */
   getFailureStats(): Record<AIProviderId, number> {
-    return Object.fromEntries(this.failureCount);
+    return Object.fromEntries(this.failureCount) as Record<AIProviderId, number>;
   }
 
   /**

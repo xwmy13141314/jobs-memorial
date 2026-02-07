@@ -167,8 +167,8 @@ function calculateStats(events: any[]): StatsResponse {
       avg_rounds: avgRounds,
       avg_duration_ms: avgDuration,
     },
-    popular_tags,
-    top_quotes,
+    popular_tags: popularTags,
+    top_quotes: topQuotes,
     brand_triggers: brandTriggerEvents.length,
     errors: {
       total_errors: errorEvents.length,

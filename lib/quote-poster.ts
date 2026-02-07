@@ -271,7 +271,7 @@ export async function generateQuotePoster(
       logging: false,
       useCORS: true,
       allowTaint: true,
-    });
+    } as any);
 
     // 转换为 Blob
     return new Promise((resolve, reject) => {
