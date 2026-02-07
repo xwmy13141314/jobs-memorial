@@ -31,46 +31,67 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 overflow-hidden">
-      <div className="absolute inset-0 opacity-5">
-        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <defs>
-            <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5" />
-            </pattern>
-          </defs>
-          <rect width="100" height="100" fill="url(#grid)" />
-        </svg>
-      </div>
-
+    <section className="relative min-h-screen flex items-center justify-center">
+      {/* 乔布斯经典轮廓 - 白色轮廓 */}
       <div
-        className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none"
+        className="absolute inset-0 flex items-center justify-center pointer-events-none"
         style={{
-          transform: 'translate(' + mousePosition.x + 'px, ' + mousePosition.y + 'px)',
-          transition: 'transform 0.3s ease-out',
+          opacity: 0.2,
+          transform: 'translate(' + mousePosition.x * 0.5 + 'px, ' + mousePosition.y * 0.5 + 'px)',
+          transition: 'transform 0.5s ease-out',
         }}
       >
-        <svg className="w-[500px] h-[500px] md:w-[700px] md:h-[700px]" viewBox="0 0 200 200" fill="white">
-          <ellipse cx="100" cy="70" rx="35" ry="42" fill="currentColor" opacity="0.9" />
-          <circle cx="80" cy="65" r="18" fill="none" stroke="currentColor" strokeWidth="3" opacity="0.8" />
-          <circle cx="120" cy="65" r="18" fill="none" stroke="currentColor" strokeWidth="3" opacity="0.8" />
-          <line x1="98" y1="65" x2="102" y2="65" stroke="currentColor" strokeWidth="3" opacity="0.8" />
-          <path d="M 65 112 Q 100 105 135 112 L 140 180 Q 100 185 60 180 Z" fill="currentColor" opacity="0.7" />
+        <svg
+          className="w-[600px] h-[600px] md:w-[800px] md:h-[800px]"
+          viewBox="0 0 200 220"
+          fill="white"
+        >
+          {/* 头部轮廓 */}
+          <ellipse cx="100" cy="55" rx="38" ry="45" fill="currentColor" opacity="0.7" />
+
+          {/* 头发 - 自然分界 */}
+          <path d="M 62 55 Q 60 30 75 20 Q 100 12 125 20 Q 140 30 138 55" fill="currentColor" opacity="0.6" />
+          <path d="M 75 20 Q 100 28 100 45" stroke="currentColor" strokeWidth="2" opacity="0.5" fill="none" />
+
+          {/* 左眼镜框 - 经典圆框眼镜 */}
+          <circle cx="80" cy="52" r="16" fill="none" stroke="currentColor" strokeWidth="3" opacity="0.9" />
+          <circle cx="80" cy="52" r="13" fill="currentColor" opacity="0.25" />
+
+          {/* 右眼镜框 */}
+          <circle cx="120" cy="52" r="16" fill="none" stroke="currentColor" strokeWidth="3" opacity="0.9" />
+          <circle cx="120" cy="52" r="13" fill="currentColor" opacity="0.25" />
+
+          {/* 鼻梁架 */}
+          <path d="M 96 52 Q 100 48 104 52" stroke="currentColor" strokeWidth="2.5" opacity="0.8" fill="none" />
+
+          {/* 镜腿 */}
+          <line x1="64" y1="52" x2="55" y2="50" stroke="currentColor" strokeWidth="2.5" opacity="0.6" />
+          <line x1="136" y1="52" x2="145" y2="50" stroke="currentColor" strokeWidth="2.5" opacity="0.6" />
+
+          {/* 鼻子阴影 */}
+          <path d="M 100 58 L 98 72 L 102 72 Z" fill="currentColor" opacity="0.5" />
+
+          {/* 嘴部 */}
+          <path d="M 88 80 Q 100 84 112 80" stroke="currentColor" strokeWidth="2.5" opacity="0.7" fill="none" />
+
+          {/* 下巴轮廓 */}
+          <path d="M 70 95 Q 100 102 130 95" stroke="currentColor" strokeWidth="2" opacity="0.5" fill="none" />
+
+          {/* 脖子 */}
+          <rect x="90" y="95" width="20" height="15" fill="currentColor" opacity="0.6" />
+
+          {/* 黑色高领毛衣 - 经典造型 */}
+          <path d="M 60 110 Q 100 100 140 110 L 150 190 Q 100 195 50 190 Z" fill="currentColor" opacity="0.7" />
+
+          {/* 高领衣领线条 */}
+          <path d="M 70 112 Q 100 108 130 112" stroke="white" strokeWidth="2" opacity="0.35" fill="none" />
+          <path d="M 85 112 L 85 125" stroke="white" strokeWidth="1.5" opacity="0.3" />
+          <path d="M 115 112 L 115 125" stroke="white" strokeWidth="1.5" opacity="0.3" />
+
+          {/* 肩膀轮廓 */}
+          <ellipse cx="100" cy="185" rx="55" ry="15" fill="currentColor" opacity="0.5" />
         </svg>
       </div>
-
-      <div
-        className="absolute w-96 h-96 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse"
-        style={{ top: '10%', left: '5%', transform: 'translateY(' + (scrollY * 0.15) + 'px)' }}
-      />
-      <div
-        className="absolute w-80 h-80 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur-3xl opacity-15 animate-pulse"
-        style={{ animationDelay: '1s', top: '60%', right: '10%', transform: 'translateY(' + (scrollY * -0.12) + 'px)' }}
-      />
-      <div
-        className="absolute w-72 h-72 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full blur-3xl opacity-10 animate-pulse"
-        style={{ animationDelay: '2s', bottom: '15%', left: '20%', transform: 'translateY(' + (scrollY * 0.08) + 'px)' }}
-      />
 
       <div className="relative z-10 text-center px-4">
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">史蒂夫·乔布斯</h1>
@@ -96,7 +117,6 @@ export default function Hero() {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </button>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent" />
     </section>
   );
 }

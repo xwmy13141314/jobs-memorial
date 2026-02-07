@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import MouseFollower from "@/components/MouseFollower";
 import ChatWidget from "@/components/ChatWidget";
 import Analytics from "@/components/Analytics";
 import { ToastProvider } from "@/components/ToastProvider";
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
 
 export const metadata: Metadata = {
   title: {
@@ -78,7 +72,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN">
-      <body className={`${inter.variable} antialiased`}>
+      <body className="antialiased font-sans">
         <ToastProvider>
           <Analytics />
           <MouseFollower />
