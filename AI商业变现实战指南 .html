@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI商业变现实战指南</title>
+
+    <!-- Fonts: Cormorant (Display Serif) + IBM Plex Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===========================================
+           CSS CUSTOM PROPERTIES - DARK BOTANICAL THEME
+           =========================================== */
+        :root {
+            --bg-primary: #0f0f0f;
+            --text-primary: #e8e4df;
+            --text-secondary: #9a9590;
+            --text-muted: #6b6762;
+            --accent-warm: #d4a574;
+            --accent-pink: #e8b4b8;
+            --accent-gold: #c9b896;
+
+            --font-display: 'Cormorant', serif;
+            --font-body: 'IBM Plex Sans', sans-serif;
+
+            --title-size: clamp(2rem, 7vw, 5rem);
+            --h2-size: clamp(1.8rem, 5vw, 3rem);
+            --h3-size: clamp(1.2rem, 3vw, 1.6rem);
+            --body-size: clamp(0.85rem, 1.5vw, 1.05rem);
+            --small-size: clamp(0.7rem, 1.2vw, 0.9rem);
+
+            --content-gap: clamp(0.8rem, 2vw, 1.5rem);
+            --element-gap: clamp(0.4rem, 1vw, 0.8rem);
+
+            --ease-out-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+            --duration-normal: 0.7s;
+        }
+
+        /* ===========================================
+           BASE STYLES
+           =========================================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { height: 100%; overflow-x: hidden; }
+        html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* ===========================================
+           SLIDE STRUCTURE
+           =========================================== */
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: var(--bg-primary);
+            padding: clamp(1.5rem, 4vw, 3rem);
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 1;
+            max-width: min(90vw, 800px);
+            width: 100%;
+        }
+
+        /* ===========================================
+           BACKGROUND ELEMENTS
+           =========================================== */
+        .gradient-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(70px);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .circle-top-right {
+            width: clamp(150px, 25vw, 350px);
+            height: clamp(150px, 25vw, 350px);
+            background: radial-gradient(circle, var(--accent-pink) 0%, transparent 70%);
+            top: -5%;
+            right: -5%;
+        }
+
+        .circle-bottom-left {
+            width: clamp(120px, 20vw, 280px);
+            height: clamp(120px, 20vw, 280px);
+            background: radial-gradient(circle, var(--accent-gold) 0%, transparent 70%);
+            bottom: -5%;
+            left: -5%;
+        }
+
+        .accent-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, var(--accent-warm), transparent);
+            height: 1px;
+            opacity: 0.4;
+            left: 8%;
+            right: 8%;
+        }
+
+        .line-top { top: 12%; }
+        .line-bottom { bottom: 12%; }
+
+        .corner-accent {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 1px solid var(--accent-warm);
+            opacity: 0.4;
+        }
+
+        .corner-top-right {
+            top: clamp(1.5rem, 3vw, 3rem);
+            right: clamp(1.5rem, 3vw, 3rem);
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .corner-bottom-left {
+            bottom: clamp(1.5rem, 3vw, 3rem);
+            left: clamp(1.5rem, 3vw, 3rem);
+            border-right: none;
+            border-top: none;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: clamp(1.5rem, 3vw, 3rem);
+            right: clamp(1.5rem, 3vw, 3rem);
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            color: var(--accent-warm);
+            opacity: 0.2;
+        }
+
+        /* ===========================================
+           TYPOGRAPHY
+           =========================================== */
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: var(--title-size);
+            margin-bottom: var(--content-gap);
+        }
+
+        h1 span { color: var(--accent-warm); font-style: italic; }
+
+        h2 {
+            font-size: var(--h2-size);
+            margin-bottom: var(--content-gap);
+        }
+
+        h3 {
+            font-size: var(--h3-size);
+            margin-bottom: var(--element-gap);
+            color: var(--accent-warm);
+        }
+
+        p {
+            font-size: var(--body-size);
+            color: var(--text-secondary);
+            margin-bottom: var(--element-gap);
+            line-height: 1.7;
+        }
+
+        .subtitle {
+            font-size: var(--body-size);
+            color: var(--text-muted);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+
+        /* ===========================================
+           ANIMATIONS
+           =========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity var(--duration-normal) var(--ease-out-smooth),
+                        transform var(--duration-normal) var(--ease-out-smooth);
+        }
+
+        .slide.visible .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal:nth-child(1) { transition-delay: 0.1s; }
+        .reveal:nth-child(2) { transition-delay: 0.2s; }
+        .reveal:nth-child(3) { transition-delay: 0.3s; }
+        .reveal:nth-child(4) { transition-delay: 0.4s; }
+        .reveal:nth-child(5) { transition-delay: 0.5s; }
+
+        /* ===========================================
+           COMPONENTS
+           =========================================== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: var(--content-gap);
+            margin-top: var(--content-gap);
+        }
+
+        .feature-box {
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: rgba(212, 165, 116, 0.08);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            border-radius: 4px;
+        }
+
+        .highlight-box {
+            background: rgba(212, 165, 116, 0.12);
+            padding: clamp(1rem, 2vw, 1.5rem);
+            border-left: 3px solid var(--accent-warm);
+            margin: var(--content-gap) 0;
+        }
+
+        .warning-box {
+            background: rgba(232, 180, 184, 0.1);
+            padding: clamp(1rem, 2vw, 1.5rem);
+            border-left: 3px solid var(--accent-pink);
+            margin: var(--content-gap) 0;
+        }
+
+        .info-box {
+            background: rgba(201, 184, 150, 0.1);
+            padding: clamp(0.8rem, 1.5vw, 1.2rem);
+            border-radius: 4px;
+            border: 1px solid rgba(201, 184, 150, 0.2);
+        }
+
+        /* ===========================================
+           TABLE
+           =========================================== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: var(--content-gap) 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: clamp(0.6rem, 1.5vw, 1rem);
+            text-align: left;
+            border-bottom: 1px solid rgba(232, 228, 223, 0.1);
+            font-size: var(--body-size);
+        }
+
+        .comparison-table th {
+            font-family: var(--font-display);
+            font-size: var(--h3-size);
+            color: var(--accent-warm);
+            border-bottom: 1px solid var(--accent-warm);
+        }
+
+        .comparison-table tr:last-child td { border-bottom: none; }
+
+        /* ===========================================
+           LISTS
+           =========================================== */
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: var(--element-gap);
+            font-size: var(--body-size);
+        }
+
+        .bullet-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--accent-warm);
+        }
+
+        .number-list {
+            list-style: none;
+            counter-reset: item;
+        }
+
+        .number-list li {
+            counter-increment: item;
+            margin-bottom: var(--element-gap);
+            padding-left: 2.5rem;
+            position: relative;
+            font-size: var(--body-size);
+        }
+
+        .number-list li::before {
+            content: counter(item);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1.8rem;
+            height: 1.8rem;
+            border: 1px solid var(--accent-warm);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: var(--small-size);
+            color: var(--accent-warm);
+        }
+
+        /* ===========================================
+           NAVIGATION
+           =========================================== */
+        .nav-dots {
+            position: fixed;
+            right: clamp(1rem, 2vw, 2rem);
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.3rem, 1vw, 0.5rem);
+        }
+
+        .nav-dot {
+            width: clamp(0.35rem, 1vw, 0.5rem);
+            height: clamp(0.35rem, 1vw, 0.5rem);
+            border-radius: 50%;
+            background: rgba(232, 228, 223, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot:hover { background: rgba(232, 228, 223, 0.4); }
+        .nav-dot.active { background: var(--accent-warm); transform: scale(1.3); }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background: var(--accent-warm);
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+
+        .keyboard-hint {
+            position: fixed;
+            bottom: clamp(1rem, 2vw, 1.5rem);
+            right: clamp(1rem, 2vw, 2rem);
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            opacity: 0.5;
+            z-index: 1000;
+        }
+
+        /* ===========================================
+           EDITING
+           =========================================== */
+        .edit-hotzone {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            z-index: 10000;
+            cursor: pointer;
+        }
+
+        .edit-toggle {
+            position: fixed;
+            top: 1.5rem;
+            left: 1.5rem;
+            width: 45px;
+            height: 45px;
+            background: rgba(212, 165, 116, 0.15);
+            border: 1px solid var(--accent-warm);
+            color: var(--accent-warm);
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 10001;
+        }
+
+        .edit-toggle.show, .edit-toggle.active { opacity: 1; pointer-events: auto; }
+        .edit-toggle.active { background: var(--accent-warm); color: var(--bg-primary); }
+        [contenteditable] { outline: 1px dashed var(--accent-warm); outline-offset: 3px; }
+
+        .save-notification {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--accent-warm);
+            color: var(--bg-primary);
+            padding: 0.8rem 1.5rem;
+            font-size: var(--small-size);
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+            z-index: 10002;
+        }
+
+        .save-notification.show { opacity: 1; transform: translateY(0); }
+
+        /* ===========================================
+           RESPONSIVE
+           =========================================== */
+        @media (max-height: 700px) {
+            .accent-line { display: none; }
+            .keyboard-hint { display: none; }
+        }
+
+        @media (max-height: 600px) {
+            .corner-accent { display: none; }
+            .gradient-circle { opacity: 0.2; }
+        }
+
+        @media (max-width: 600px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .nav-dots { right: 0.8rem; gap: 0.3rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.2s !important;
+            }
+            html { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <nav class="nav-dots" id="navDots"></nav>
+    <div class="keyboard-hint">使用 ↑↓ 或滚动导航</div>
+    <div class="edit-hotzone" id="editHotzone"></div>
+    <button class="edit-toggle" id="editToggle" title="编辑模式 (E)">✏️</button>
+    <div class="save-notification" id="saveNotification">✓ 已保存</div>
+
+    <!-- SLIDE 1: 封面 -->
+    <section class="slide">
+        <div class="gradient-circle circle-top-right"></div>
+        <div class="gradient-circle circle-bottom-left"></div>
+        <div class="accent-line line-top"></div>
+        <div class="accent-line line-bottom"></div>
+        <div class="corner-accent corner-top-right"></div>
+
+        <div class="slide-content" style="text-align: center;">
+            <p class="subtitle reveal">AI商业变现实战指南</p>
+            <h1 class="reveal">从技术思维到<span>商业价值</span></h1>
+        </div>
+        <div class="slide-number">01</div>
+    </section>
+
+    <!-- SLIDE 2: 核心观点 -->
+    <section class="slide">
+        <div class="gradient-circle circle-bottom-left"></div>
+        <div class="accent-line line-top"></div>
+
+        <div class="slide-content">
+            <h2 class="reveal">核心观点</h2>
+
+            <div class="highlight-box reveal">
+                <p style="margin: 0; font-size: var(--h3-size); font-family: var(--font-display);">
+                    变现是学习AI的核心驱动力
+                </p>
+            </div>
+
+            <ul class="number-list" style="margin-top: 2rem;">
+                <li class="reveal">B端服务优于C端</li>
+                <li class="reveal">月入5-6万并不难</li>
+                <li class="reveal">先找客户，再学技术</li>
+                <li class="reveal">业务场景大于技术</li>
+            </ul>
+        </div>
+        <div class="slide-number">02</div>
+    </section>
+
+    <!-- SLIDE 3: 思维差异 -->
+    <section class="slide">
+        <div class="gradient-circle circle-top-right"></div>
+        <div class="corner-accent corner-bottom-left"></div>
+
+        <div class="slide-content">
+            <h2 class="reveal">思维差异</h2>
+            <p class="subtitle reveal">开发者视角 vs 老板视角</p>
+
+            <table class="comparison-table reveal">
+                <thead>
+                    <tr>
+                        <th>开发者</th>
+                        <th>老板</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>参数、RAG、MCP</td><td>降本增效、ROI</td></tr>
+                    <tr><td>AI技术能力</td><td>投资回报率</td></tr>
+                    <tr><td>模型选择</td><td>人力成本节省</td></tr>
+                    <tr><td>技术术语</td><td>解决业务问题</td></tr>
+                </tbody>
+            </table>
+
+            <div class="warning-box reveal">
+                <p style="margin: 0;">关键建议：将技术语言翻译成商业价值</p>
+            </div>
+        </div>
+        <div class="slide-number">03</div>
+    </section>
+
+    <!-- SLIDE 4: 商业闭环 -->
+    <section class="slide">
+        <div class="gradient-circle circle-bottom-left"></div>
+        <div class="accent-line line-bottom"></div>
+
+        <div class="slide-content">
+            <h2 class="reveal">商业闭环</h2>
+
+            <div class="grid-2" style="margin-top: 2rem;">
+                <div class="feature-box reveal" style="border-color: var(--accent-pink);">
+                    <h3 style="color: var(--accent-pink);">❌ 错误方向</h3>
+                    <ul class="bullet-list" style="margin-top: 1rem;">
+                        <li>先学技术</li>
+                        <li>找不到客户</li>
+                        <li>怀疑方向</li>
+                    </ul>
+                </div>
+
+                <div class="feature-box reveal" style="border-color: var(--accent-warm);">
+                    <h3 style="color: var(--accent-warm);">✅ 正确方向</h3>
+                    <ul class="bullet-list" style="margin-top: 1rem;">
+                        <li>先找客户</li>
+                        <li>了解需求</li>
+                        <li>学习技术</li>
+                        <li>交付变现</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="reveal" style="margin-top: 2rem; text-align: center; color: var(--accent-warm); font-family: var(--font-display);">
+                核心能力：找客户 > 谈单 > 技术实现
+            </p>
+        </div>
+        <div class="slide-number">04</div>
+    </section>
+
+    <!-- SLIDE 5: 谈单技巧 -->
+    <section class="slide">
+        <div class="gradient-circle circle-top-right"></div>
+        <div class="accent-line line-top"></div>
+
+        <div class="slide-content">
+            <h2 class="reveal">谈单技巧</h2>
+            <p class="subtitle reveal">价值包装案例</p>
+
+            <div class="grid-2" style="margin-top: 2rem;">
+                <div class="reveal">
+                    <h3 style="color: var(--text-secondary);">直接卖Prompt</h3>
+                    <div class="feature-box" style="margin-top: 1rem; text-align: center;">
+                        <p style="font-size: var(--h2-size); font-family: var(--font-display); color: var(--text-muted);">1万元</p>
+                        <p style="margin-top: 0.5rem; font-size: var(--small-size);">老板觉得贵</p>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <h3 style="color: var(--accent-warm);">价值包装</h3>
+                    <div class="feature-box" style="margin-top: 1rem; border-color: var(--accent-warm); background: rgba(212, 165, 116, 0.15);">
+                        <p style="font-size: var(--small-size);">500客服×省2小时/天</p>
+                        <p style="font-size: var(--small-size); color: var(--text-muted);">→ 年省百万成本</p>
+                        <p style="font-size: var(--h2-size); font-family: var(--font-display); color: var(--accent-warm); text-align: center; margin-top: 1rem;">5万元</p>
+                        <p style="text-align: center; margin-top: 0.3rem; font-size: var(--small-size); color: var(--accent-warm);">老板觉得划算</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">05</div>
+    </section>
+
+    <!-- SLIDE 6: 高价值场景 -->
+    <section class="slide">
+        <div class="gradient-circle circle-center"></div>
+        <div class="accent-line line-top"></div>
+        <div class="accent-line line-bottom"></div>
+
+        <div class="slide-content">
+            <h2 class="reveal">高价值场景</h2>
+
+            <div class="grid-2" style="margin-top: 2rem;">
+                <div class="feature-box reveal">
+                    <h3>1. 内容侧</h3>
+                    <p style="margin-top: 0.8rem;">商品详情页生成<br>营销文案创作<br>一键产品展示</p>
+                </div>
+
+                <div class="feature-box reveal">
+                    <h3>2. 效率侧</h3>
+                    <p style="margin-top: 0.8rem;">数据分析自动化<br>合同整理审查<br>交付结果为主</p>
+                </div>
+
+                <div class="feature-box reveal">
+                    <h3>3. 垂直行业</h3>
+                    <p style="margin-top: 0.8rem;">制造业图纸解析<br>生物制药优化<br>深度场景方案</p>
+                </div>
+
+                <div class="info-box reveal" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+                    <p style="margin: 0; color: var(--accent-warm);">🌟 出海业务<br>客单价更高</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">06</div>
+    </section>
+
+    <!-- SLIDE 7: 免费诊断 -->
+    <section class="slide">
+        <div class="gradient-circle circle-bottom-left"></div>
+        <div class="corner-accent corner-top-right"></div>
+
+        <div class="slide-content">
+            <h2 class="reveal">免费诊断模式</h2>
+
+            <div class="highlight-box reveal">
+                <p style="margin: 0;">免费诊断 = 最好的获客方式</p>
+            </div>
+
+            <p class="reveal" style="margin-top: 2rem;">
+                帮企业诊断出<span style="color: var(--accent-warm);">100个</span>痛点 = <span style="color: var(--accent-warm);">100个</span>变现点
+            </p>
+
+            <div class="grid-2" style="margin-top: 2rem;">
+                <ul class="bullet-list reveal">
+                    <li>深入了解业务</li>
+                    <li>识别AI机会</li>
+                    <li>建立专业信任</li>
+                </ul>
+
+                <ul class="bullet-list reveal">
+                    <li>陪伴深耕行业</li>
+                    <li>升级服务级别</li>
+                    <li>长期合作关系</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide-number">07</div>
+    </section>
+
+    <!-- SLIDE 8: 实战案例 -->
+    <section class="slide">
+        <div class="gradient-circle circle-top-right"></div>
+        <div class="accent-line line-bottom"></div>
+
+        <div class="slide-content">
+            <h2 class="reveal">实战案例</h2>
+            <p class="subtitle reveal">海外客服项目</p>
+
+            <div class="grid-2" style="margin-top: 2rem;">
+                <div class="reveal">
+                    <h3>客户情况</h3>
+                    <ul class="bullet-list" style="margin-top: 1rem;">
+                        <li>400人客服团队</li>
+                        <li>每人月薪1万元</li>
+                    </ul>
+                </div>
+
+                <div class="reveal">
+                    <h3>我们的方案</h3>
+                    <ul class="bullet-list" style="margin-top: 1rem;">
+                        <li>咨询介入3个月</li>
+                        <li>月收3万美金</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box reveal" style="margin-top: 2rem;">
+                <p style="margin: 0;">ROI：省100人 = 年省上千万成本</p>
+            </div>
+        </div>
+        <div class="slide-number">08</div>
+    </section>
+
+    <!-- SLIDE 9: 避坑指南1 -->
+    <section class="slide">
+        <div class="gradient-circle circle-center"></div>
+        <div class="accent-line line-top"></div>
+
+        <div class="slide-content">
+            <h2 class="reveal">避坑指南</h2>
+            <p class="subtitle reveal">五大常见错误（上）</p>
+
+            <div class="grid-2" style="margin-top: 2rem;">
+                <div class="feature-box reveal" style="border-color: var(--accent-pink);">
+                    <h3 style="color: var(--accent-pink);">1. 伪痛点</h3>
+                    <p style="margin-top: 0.8rem; font-size: var(--small-size);">要来源于真实业务场景，不要臆想需求</p>
+                </div>
+
+                <div class="feature-box reveal" style="border-color: var(--accent-pink);">
+                    <h3 style="color: var(--accent-pink);">2. 极差体验</h3>
+                    <p style="margin-top: 0.8rem; font-size: var(--small-size);">要做"傻瓜式按钮"，不要让员工学Prompt</p>
+                </div>
+
+                <div class="feature-box reveal" style="border-color: var(--accent-pink);">
+                    <h3 style="color: var(--accent-pink);">3. 算不清账</h3>
+                    <p style="margin-top: 0.8rem; font-size: var(--small-size);">必须帮客户算清楚ROI，包括时间成本</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">09</div>
+    </section>
+
+    <!-- SLIDE 10: 避坑指南2 -->
+    <section class="slide">
+        <div class="gradient-circle circle-bottom-left"></div>
+        <div class="accent-line line-bottom"></div>
+
+        <div class="slide-content">
+            <h2 class="reveal">避坑指南</h2>
+            <p class="subtitle reveal">五大常见错误（下）</p>
+
+            <div class="grid-2" style="margin-top: 2rem;">
+                <div class="feature-box reveal" style="border-color: var(--accent-pink);">
+                    <h3 style="color: var(--accent-pink);">4. 大而全</h3>
+                    <p style="margin-top: 0.8rem; font-size: var(--small-size);">做"小而美"单点场景，不要全公司AI化</p>
+                </div>
+
+                <div class="feature-box reveal" style="border-color: var(--accent-pink);">
+                    <h3 style="color: var(--accent-pink);">5. 技术洁癖</h3>
+                    <p style="margin-top: 0.8rem; font-size: var(--small-size);">不要迷恋最新技术，稳定的老技术更好用</p>
+                </div>
+            </div>
+
+            <div class="info-box reveal" style="margin-top: 2rem;">
+                <p style="margin: 0; font-size: var(--small-size);">企业追求的是"稳定"，不是"酷炫"</p>
+            </div>
+        </div>
+        <div class="slide-number">10</div>
+    </section>
+
+    <!-- SLIDE 11: 交付管理 -->
+    <section class="slide">
+        <div class="gradient-circle circle-top-right"></div>
+        <div class="corner-accent corner-bottom-left"></div>
+
+        <div class="slide-content">
+            <h2 class="reveal">交付管理技巧</h2>
+
+            <ul class="number-list" style="margin-top: 2rem;">
+                <li class="reveal"><strong style="color: var(--text-primary);">管理预期</strong> — 不承诺100%准确率</li>
+                <li class="reveal"><strong style="color: var(--text-primary);">找关键人物</strong> — 找最配合的人一起做</li>
+                <li class="reveal"><strong style="color: var(--text-primary);">快速原型</strong> — 录音→AI→Demo→签约</li>
+                <li class="reveal"><strong style="color: var(--text-primary);">傻瓜式操作</strong> — 极简按钮，不学Prompt</li>
+            </ul>
+        </div>
+        <div class="slide-number">11</div>
+    </section>
+
+    <!-- SLIDE 12: 核心金句 -->
+    <section class="slide">
+        <div class="gradient-circle circle-center"></div>
+        <div class="accent-line line-top"></div>
+        <div class="accent-line line-bottom"></div>
+
+        <div class="slide-content" style="text-align: center;">
+            <h2 class="reveal">核心金句</h2>
+
+            <div class="highlight-box reveal" style="margin-top: 2rem;">
+                <p style="margin: 0; font-size: var(--h2-size); font-family: var(--font-display); font-style: italic;">
+                    "只要你学得慢就不用学了"
+                </p>
+            </div>
+
+            <div class="info-box reveal" style="margin-top: 1.5rem;">
+                <p style="margin: 0; font-size: var(--h3-size); font-family: var(--font-display); font-style: italic;">
+                    "越传统的行业痛点越痛"
+                </p>
+            </div>
+
+            <div class="feature-box reveal" style="margin-top: 1.5rem; border-color: var(--accent-pink); background: rgba(232, 180, 184, 0.1);">
+                <p style="margin: 0; font-size: var(--h3-size); font-family: var(--font-display); font-style: italic; color: var(--accent-pink);">
+                    "企业用AI，要用老技术"
+                </p>
+            </div>
+        </div>
+        <div class="slide-number">12</div>
+    </section>
+
+    <!-- SLIDE 13: 行动建议 -->
+    <section class="slide">
+        <div class="gradient-circle circle-bottom-left"></div>
+        <div class="corner-accent corner-top-right"></div>
+
+        <div class="slide-content">
+            <h2 class="reveal">行动建议</h2>
+
+            <div class="grid-2" style="margin-top: 2rem;">
+                <ul class="number-list">
+                    <li class="reveal">补足谈单能力</li>
+                    <li class="reveal">业务场景优先</li>
+                    <li class="reveal">深入垂直行业</li>
+                </ul>
+
+                <ul class="number-list">
+                    <li class="reveal">下地干活</li>
+                    <li class="reveal">从小做起</li>
+                    <li class="reveal">价值为王</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide-number">13</div>
+    </section>
+
+    <!-- SLIDE 14: Q&A -->
+    <section class="slide">
+        <div class="gradient-circle circle-top-right"></div>
+        <div class="accent-line line-top"></div>
+
+        <div class="slide-content">
+            <h2 class="reveal">常见问题</h2>
+
+            <div class="reveal" style="margin-bottom: 2rem;">
+                <h3>Q: 未来企业构建AI智能体是大方向吗？</h3>
+                <div class="info-box" style="margin-top: 0.8rem;">
+                    <p style="margin: 0; font-size: var(--small-size);">
+                        <strong style="color: var(--accent-warm);">A:</strong> 不建议做全公司通用平台，更倾向于做SaaS化、针对特定部门的单点解决方案。
+                    </p>
+                </div>
+            </div>
+
+            <div class="reveal">
+                <h3>Q: 记录客户需求有什么工具推荐？</h3>
+                <div class="info-box" style="margin-top: 0.8rem;">
+                    <p style="margin: 0; font-size: var(--small-size);">
+                        <strong style="color: var(--accent-warm);">A:</strong> 建议开会时直接录音，让AI生成产品原型。快速明确需求，降低沟通成本。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">14</div>
+    </section>
+
+    <!-- SLIDE 15: 结束页 -->
+    <section class="slide">
+        <div class="gradient-circle circle-top-right"></div>
+        <div class="gradient-circle circle-bottom-left"></div>
+        <div class="accent-line line-top"></div>
+        <div class="accent-line line-bottom"></div>
+        <div class="corner-accent corner-top-right"></div>
+        <div class="corner-accent corner-bottom-left"></div>
+
+        <div class="slide-content" style="text-align: center;">
+            <h1 class="reveal">祝大家<span>2026</span><br>发大财</h1>
+
+            <p class="reveal" style="margin-top: 3rem; font-size: var(--h3-size); font-family: var(--font-display); color: var(--accent-warm);">
+                🚀 下地干活，去企业看真实场景
+            </p>
+
+            <div class="highlight-box reveal" style="margin-top: 3rem;">
+                <p style="margin: 0; font-size: var(--body-size);">
+                    先找客户，再学技术 | 业务场景 > 单纯技术
+                </p>
+            </div>
+
+            <p class="reveal" style="margin-top: 3rem; font-size: var(--small-size); color: var(--text-muted);">
+                — 谢谢 —
+            </p>
+        </div>
+        <div class="slide-number">15</div>
+    </section>
+
+    <script>
+        class SlidePresentation {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.currentSlide = 0;
+                this.editMode = false;
+                this.setupIntersectionObserver();
+                this.setupKeyboardNav();
+                this.setupTouchNav();
+                this.setupProgressBar();
+                this.setupNavDots();
+                this.setupEditing();
+            }
+
+            setupIntersectionObserver() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            const index = Array.from(this.slides).indexOf(entry.target);
+                            this.currentSlide = index;
+                            this.updateProgress();
+                            this.updateNavDots();
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                this.slides.forEach(slide => observer.observe(slide));
+            }
+
+            setupKeyboardNav() {
+                document.addEventListener('keydown', (e) => {
+                    if (e.target.getAttribute('contenteditable')) return;
+
+                    switch(e.key) {
+                        case 'ArrowDown':
+                        case 'ArrowRight':
+                        case ' ':
+                            e.preventDefault();
+                            this.goToSlide(this.currentSlide + 1);
+                            break;
+                        case 'ArrowUp':
+                        case 'ArrowLeft':
+                            e.preventDefault();
+                            this.goToSlide(this.currentSlide - 1);
+                            break;
+                        case 'Home':
+                            e.preventDefault();
+                            this.goToSlide(0);
+                            break;
+                        case 'End':
+                            e.preventDefault();
+                            this.goToSlide(this.slides.length - 1);
+                            break;
+                    }
+                });
+            }
+
+            setupTouchNav() {
+                let touchStartY = 0;
+                let touchEndY = 0;
+
+                document.addEventListener('touchstart', (e) => {
+                    touchStartY = e.changedTouches[0].screenY;
+                });
+
+                document.addEventListener('touchend', (e) => {
+                    touchEndY = e.changedTouches[0].screenY;
+                    const diff = touchStartY - touchEndY;
+                    if (Math.abs(diff) > 50) {
+                        this.goToSlide(diff > 0 ? this.currentSlide + 1 : this.currentSlide - 1);
+                    }
+                });
+            }
+
+            setupProgressBar() {
+                this.progressBar = document.getElementById('progressBar');
+            }
+
+            setupNavDots() {
+                this.navDots = document.getElementById('navDots');
+                this.slides.forEach((slide, index) => {
+                    const dot = document.createElement('div');
+                    dot.className = 'nav-dot';
+                    dot.addEventListener('click', () => this.goToSlide(index));
+                    this.navDots.appendChild(dot);
+                });
+            }
+
+            goToSlide(index) {
+                if (index < 0 || index >= this.slides.length) return;
+                this.slides[index].scrollIntoView({ behavior: 'smooth' });
+            }
+
+            updateProgress() {
+                const progress = ((this.currentSlide + 1) / this.slides.length) * 100;
+                this.progressBar.style.width = `${progress}%`;
+            }
+
+            updateNavDots() {
+                const dots = this.navDots.querySelectorAll('.nav-dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentSlide);
+                });
+            }
+
+            setupEditing() {
+                const hotzone = document.getElementById('editHotzone');
+                const toggle = document.getElementById('editToggle');
+                const notification = document.getElementById('saveNotification');
+                let hideTimeout = null;
+
+                toggle.addEventListener('click', () => this.toggleEditMode());
+
+                hotzone.addEventListener('mouseenter', () => {
+                    clearTimeout(hideTimeout);
+                    toggle.classList.add('show');
+                });
+
+                hotzone.addEventListener('mouseleave', () => {
+                    hideTimeout = setTimeout(() => {
+                        if (!this.editMode) toggle.classList.remove('show');
+                    }, 400);
+                });
+
+                toggle.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
+                toggle.addEventListener('mouseleave', () => {
+                    hideTimeout = setTimeout(() => {
+                        if (!this.editMode) toggle.classList.remove('show');
+                    }, 400);
+                });
+
+                hotzone.addEventListener('click', () => this.toggleEditMode());
+
+                document.addEventListener('keydown', (e) => {
+                    if ((e.key === 'e' || e.key === 'E') && !e.target.getAttribute('contenteditable')) {
+                        this.toggleEditMode();
+                    }
+                });
+
+                document.addEventListener('input', (e) => {
+                    if (e.target.getAttribute('contenteditable')) {
+                        this.saveToStorage();
+                        this.showNotification(notification);
+                    }
+                });
+            }
+
+            toggleEditMode() {
+                this.editMode = !this.editMode;
+                const toggle = document.getElementById('editToggle');
+                toggle.classList.toggle('active', this.editMode);
+
+                const editableElements = document.querySelectorAll('h1, h2, h3, p, li, .subtitle');
+                editableElements.forEach(el => {
+                    if (this.editMode) {
+                        el.setAttribute('contenteditable', 'true');
+                    } else {
+                        el.removeAttribute('contenteditable');
+                    }
+                });
+            }
+
+            saveToStorage() {
+                localStorage.setItem('ai-presentation-dark-content', document.body.innerHTML);
+            }
+
+            showNotification(notification) {
+                notification.classList.add('show');
+                setTimeout(() => notification.classList.remove('show'), 2000);
+            }
+        }
+
+        new SlidePresentation();
+    </script>
+</body>
+</html>
